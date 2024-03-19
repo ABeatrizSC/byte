@@ -1,0 +1,35 @@
+header {
+    width: 100%;
+    max-height: 60px;
+    background-color: var(--black);
+    padding: 15px 20px;
+    box-shadow: 0px 2px 30px 0px rgba(0,0,0,0.75);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    & .logo {
+        width: 80px;
+    }
+
+    & .links-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        & .button-cart {
+            & .fa-cart-shopping {
+                color: var(--white);
+                font-size: 15px;
+                margin-top: 5px;
+                transition: color 300ms ease-in-out;
+
+                &:hover {
+                    color: var(--orange);
+                }
+            }
+        }
+    }
+}

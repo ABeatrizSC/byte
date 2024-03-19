@@ -1,0 +1,15 @@
+& .nav-list {
+    display: flex;
+    gap: 20px;
+
+    & .nav-list__item {
+        & a {
+            color: inherit;
+            transition: color 600ms ease-in-out;
+
+            &:hover {
+                color: var(--orange);
+            }
+        }
+    }
+}

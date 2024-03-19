@@ -1,0 +1,39 @@
+:root {
+    --black: #000;
+    --white: #fff;
+    --orange: #ffc200;
+    --red: #b01e1c;
+    --gray: #ECECEC;
+    --font: 'Poppins', sans-serif;
+    --letter-spacing: 1px;
+}
+
+html {
+    font-family: var(--font);
+}
+
+h1 {
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: var(--title-spacing);
+}
+
+p, a, li {
+    font-size: 14px;
+    letter-spacing: var(--letter-spacing);
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    font-family: var(--font);
+}

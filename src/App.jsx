@@ -1,12 +1,13 @@
 import React from "react";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 
-function App() {
+export function App() {
 
   return (
     <>
-    <h1>Hello, World!</h1>
+      <Header />
+      <Footer />
     </>
   )
 }
-
-export default App
