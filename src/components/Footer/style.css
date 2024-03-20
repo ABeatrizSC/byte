@@ -1,7 +1,6 @@
 footer {
     width: 100%;
     height: auto;
-    max-height: 250px;
     background-color: var(--black);
     padding: 25px;
     box-shadow: 0px 2px 30px 0px rgba(0,0,0,0.75);
@@ -9,7 +8,7 @@ footer {
     display: flex;
     flex-flow: column;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -27,6 +26,7 @@ footer {
         align-self: stretch;
 
         & .footer-columns {
+            flex: 1;
             display: flex;
             flex-flow: column;
             gap: 10px;
@@ -50,7 +50,6 @@ footer {
         }
 
         & .footer-columns.column-byte {
-            width: 250px;
             text-align: start;
             padding: 0;
         }
@@ -63,7 +62,7 @@ footer {
         position: relative;
         
         & p {
-            font-size: 10px;
+            font-size: 12px;
         }
 
         & .social-media-list {
@@ -76,8 +75,8 @@ footer {
 
             & .social-media-list__item {
                 background-color: var(--orange);
-                width: 35px;
-                height: 35px;
+                width: 40px;
+                height: 40px;
                 border-radius: 50%;
                 display: flex;
                 align-items: center;
@@ -90,7 +89,7 @@ footer {
 
                 & a {
                     & .fa-brands {
-                        font-size: 15px;
+                        font-size: 18px;
                         color: var(--black);
                     }
                 }

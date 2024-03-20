@@ -13,21 +13,21 @@ html {
 }
 
 h1 {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 h2 {
-    font-size: 18px;
+    font-size: 19px;
 }
 
 h3 {
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 700;
     letter-spacing: var(--title-spacing);
 }
 
 p, a, li {
-    font-size: 14px;
+    font-size: 15px;
     letter-spacing: var(--letter-spacing);
 }
 
