@@ -27,7 +27,7 @@ header {
                 transition: color 300ms ease-in-out;
 
                 &:hover {
-                    color: var(--orange);
+                    color: var(--yellow);
                 }
             }
         }

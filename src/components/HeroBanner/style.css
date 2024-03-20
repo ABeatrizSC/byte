@@ -1,0 +1,26 @@
+.hero-banner {
+    width: 100%;
+
+    & .hero-banner__container {
+        width: 100%;
+        height: 550px;
+        position: relative;
+    }
+
+    & .hero-banner__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    & .hero-banner__promotional-text {
+        font-size: 48px;
+        font-weight: 800;
+        color: var(--yellow);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding-left: 10%;
+        max-width: 30%;
+    }
+}
