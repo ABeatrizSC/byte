@@ -1,29 +1,44 @@
 :root {
     --black: #000;
     --white: #fff;
-    --orange: #ffc200;
+    --yellow: #ffc200;
+    --yellow-hover: #ffc400c2;
     --red: #b01e1c;
     --gray: #ECECEC;
     --font: 'Poppins', sans-serif;
     --letter-spacing: 1px;
+    --color-transition: color 400ms ease-in-out;
+    --bgc-transition: background-color 400ms ease-in-out;
 }
 
 html {
+    height: 100dvh;
     font-family: var(--font);
 }
 
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
 h1 {
-    font-size: 22px;
+    font-size: 27px;
+    letter-spacing: (var(--letter-spacing));
 }
 
 h2 {
-    font-size: 19px;
+    font-size: 22px;
+    letter-spacing: (var(--letter-spacing));
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     letter-spacing: var(--title-spacing);
+}
+
+h4 {
+    font-size: 18px;
 }
 
 p, a, li {
@@ -32,8 +47,15 @@ p, a, li {
 }
 
 button {
+    width: fit-content;
+    height: fit-content;
     cursor: pointer;
     background-color: transparent;
-    border: 0;
     font-family: var(--font);
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 10px;
 }

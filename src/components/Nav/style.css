@@ -5,10 +5,10 @@
     & .nav-list__item {
         & a {
             color: inherit;
-            transition: color 600ms ease-in-out;
+            transition: var(--color-transition);
 
             &:hover {
-                color: var(--orange);
+                color: var(--yellow);
             }
         }
     }

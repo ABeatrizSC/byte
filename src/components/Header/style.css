@@ -9,6 +9,7 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 10px;
+    position: relative;
 
     & .logo {
         width: 80px;
@@ -20,14 +21,16 @@ header {
         gap: 20px;
 
         & .button-cart {
-            & .fa-cart-shopping {
+            padding: 0px 5px;
+            
+            & .button-cart__icon {
                 color: var(--white);
-                font-size: 15px;
+                font-size: 18px;
                 margin-top: 5px;
-                transition: color 300ms ease-in-out;
-
+                transition: var(--color-transition);
+    
                 &:hover {
-                    color: var(--orange);
+                    color: var(--yellow);
                 }
             }
         }

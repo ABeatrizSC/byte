@@ -1,6 +1,8 @@
 import logo from '../../assets/images/logoByte.png'; 
 import './style.css';
 import { Nav } from '../Nav'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' 
+import { faFacebook, faFacebookF, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 export function Footer() {
     return (
@@ -33,17 +35,17 @@ export function Footer() {
                 <ul className='social-media-list'>
                     <li className='social-media-list__item'>
                         <a href="#">
-                            <span className="fa-brands fa-facebook-f" />
+                            <FontAwesomeIcon icon={faFacebookF} className='social-media-icons'/>
                         </a>
                     </li>
                     <li className='social-media-list__item'>
                         <a href="#">
-                            <span className="fa-brands fa-instagram" />
-                            </a>
+                            <FontAwesomeIcon icon={faInstagram} className='social-media-icons'/>
+                        </a>
                     </li>
                      <li className='social-media-list__item'>
                         <a href="#">
-                            <span className="fa-brands fa-whatsapp" />
+                        <FontAwesomeIcon icon={faWhatsapp} className='social-media-icons'/>
                         </a>
                     </li>
                 </ul>
