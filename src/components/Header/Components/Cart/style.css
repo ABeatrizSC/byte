@@ -12,6 +12,7 @@
     top: 0;
     right: -370px;
     transition-duration: 300ms;
+    z-index: 2;
     
     &.opened {
         right: 0;
