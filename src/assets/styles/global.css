@@ -6,9 +6,11 @@
     --red: #b01e1c;
     --gray: #ECECEC;
     --font: 'Poppins', sans-serif;
+    --handwritten-font: "Borel", cursive;
     --letter-spacing: 1px;
     --color-transition: color 400ms ease-in-out;
     --bgc-transition: background-color 400ms ease-in-out;
+    --txt-shadow: 1px 3px 9px rgba(0,0,0,0.6);
 }
 
 html {
@@ -29,8 +31,10 @@ h1 {
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 40px;
     letter-spacing: (var(--letter-spacing));
+    text-transform: uppercase;
+    text-shadow: var(--txt-shadow);
 }
 
 h3 {
@@ -43,16 +47,23 @@ h4 {
     font-size: 18px;
 }
 
-p, a, li {
+p, a, li, span {
     font-size: 15px;
     letter-spacing: var(--letter-spacing);
 }
 
 .home-section {
     width: 100%;
-    height: 500px;
-    background-color: var(--black);
+    text-align: justify;
+    text-shadow: var(--txt-shadow);
     padding: 50px 100px;
+    background-color: var(--black);
+
+    & .text-highlight {
+        color: var(--yellow);
+        text-transform: uppercase;
+        font-weight: 600;
+    }
 }
 
 button {
