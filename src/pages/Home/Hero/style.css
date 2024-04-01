@@ -1,6 +1,6 @@
 .hero-section {
     width: 100%;
-    height: 550px;
+    height: 55rem;
     position: relative;
 
     & .hero-section__img {
@@ -23,18 +23,18 @@
         & .byte-container {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 0.5rem;
 
             & .hr {
-                width: 15px;
-                height: 2px;
+                width: 1.5rem;
+                height: 0.2rem;
                 background-color: var(--yellow);
             }
         }
 
         & .h1--highlight {
             color: var(--white);
-            font-size: 20px;
+            font-size: 2rem;
             display: block;
             position: fixed;
         }
@@ -44,10 +44,10 @@
             bottom: 0;
 
             & p {
-                font-size: 18px;
+                font-size: 1.8rem;
             }
             & button {
-                margin-top: 20px;
+                margin-top: 2rem;
                 background-color: var(--yellow);
                 transition: var(--bgc-transition);
     
