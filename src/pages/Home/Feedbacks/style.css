@@ -1,0 +1,40 @@
+.feedback-section {
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    & .feedback-section__title {
+        text-align: center;
+    }
+
+    & .feedback-section__content {
+        max-width: 35rem;
+        display: flex;
+        gap: 2rem;
+        overflow-x: hidden;
+    }
+
+    & .arrow {
+        position: absolute;
+        font-size: 2rem;
+        color: var(--red);
+        top: 50%;
+        padding: 0;
+
+        &:hover {
+            color: var(--red-hover);
+        }
+    }
+
+    & .arrow--left {
+        left: 17rem;
+        top: 17rem;
+    }
+
+    & .arrow--right {
+        right: 17rem;
+        top: 17rem;
+    }
+}

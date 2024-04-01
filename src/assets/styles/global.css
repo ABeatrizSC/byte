@@ -4,6 +4,7 @@
     --yellow: #ffc200;
     --yellow-hover: #ffc400c2;
     --red: #b01e1c;
+    --red-hover: #b01e1cc6;
     --gray: #ECECEC;
     --font: 'Poppins', sans-serif;
     --handwritten-font: "Borel", cursive;
@@ -58,6 +59,16 @@ p, a, li, span {
     text-shadow: var(--txt-shadow);
     padding: 50px 100px;
     background-color: var(--black);
+
+    & .title-container {
+        & h3 {
+            font-family: var(--handwritten-font);
+            font-size: 18px;
+            color: var(--yellow);
+            font-weight: 400;
+            text-shadow: var(--txt-shadow);
+        }
+    }
 
     & .text-highlight {
         color: var(--yellow);
