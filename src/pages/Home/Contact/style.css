@@ -1,0 +1,15 @@
+& .contact-section {
+    color: var(--white);
+    display: flex;
+    gap: 10rem;
+    /* contato */
+    & .title-container {
+        & h3 {
+            font-family: var(--handwritten-font);
+            font-size: 1.7rem;
+            color: var(--yellow);
+            font-weight: 400;
+            text-shadow: var(--txt-shadow);
+        }
+    }
+}
