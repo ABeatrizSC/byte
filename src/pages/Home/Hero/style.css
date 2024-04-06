@@ -1,26 +1,27 @@
 .hero-section {
     width: 100%;
-    height: 55rem;
+    height: 80vh;
     position: relative;
+    color: var(--white);
 
     & .hero-section__img {
         width: 100vw;
         height: 100%;
         object-fit: cover;
+        object-position: 10% 60%;
     }
 
     & .hero-section__text-container {
-        max-width: 40%;
+        max-width: 35%;
         height: auto;
         position: absolute;
         top: 50%;
-        left: 7%;
-        transform: translateY(-30%);
-        color: var(--white);
-        display: flex;
-        flex-direction: column;
+        left: 5%;
+        transform: translateY(-50%);
+        text-align: justify;
 
         & .byte-container {
+            width: fit-content;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -30,17 +31,19 @@
                 height: 0.2rem;
                 background-color: var(--yellow);
             }
+
+            & span {
+                font-size: 1.7rem;
+            }
         }
 
         & .h1--highlight {
-            color: var(--white);
-            font-size: 2rem;
-            display: block;
-            position: fixed;
+            font-size: 15rem;
+            color: var(--yellow);
+            margin-left: -0.8rem;
         }
 
         & .subtitle-container {
-            position: sticky;
             bottom: 0;
 
             & p {

@@ -26,15 +26,15 @@ body {
 }
 
 h1 {
-    font-size: 15rem;
-    letter-spacing: var(--letter-spacing);
-    color: var(--yellow);
+    font-size: 2.5rem;
     text-transform: uppercase;
+    line-height: 8rem;
+    letter-spacing: var(--letter-spacing);
 }
 
 h2 {
     font-size: 4rem;
-    letter-spacing: (var(--letter-spacing));
+    letter-spacing: var(--letter-spacing);
     text-transform: uppercase;
     text-shadow: var(--txt-shadow);
 }
