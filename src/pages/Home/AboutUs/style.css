@@ -25,12 +25,7 @@
         flex: 1.3;
         min-width: 40rem;
 
-        & .text-container {
-            margin-top: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-          
+        & .title-container {
             & h3 {
               font-family: var(--handwritten-font);
               font-size: 1.7rem;
@@ -38,6 +33,13 @@
               font-weight: 400;
               text-shadow: var(--txt-shadow);
             }
+        }
+
+        & .text-container {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
     }
 
