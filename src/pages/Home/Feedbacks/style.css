@@ -13,7 +13,7 @@
     }
 
     & .feedback-section__carousel {
-        max-width: 35rem;
+        max-width: 50rem;
         display: flex;
         gap: 2rem;
         overflow-x: scroll;
@@ -29,23 +29,20 @@
         }
     }
 
-
     & .arrow {
         position: absolute;
-        font-size: 2rem;
+        font-size: 3rem;
         color: var(--red);
-        top: 50%;
+        top: 60%;
         padding: 0;
     }
 
     & .arrow--left {
-        left: 17rem;
-        top: 17rem;
+        left: 30rem;
     }
 
     & .arrow--right {
-        right: 17rem;
-        top: 17rem;
+        right: 30rem;
     }
 
     & .button-disabled {

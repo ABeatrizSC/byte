@@ -1,19 +1,19 @@
 & .product-container {
     width: 100%;
-    height: 110px;
+    height: 11rem;
     background-color: var(--white);
     color: var(--black);
-    padding: 10px;
-    border-radius: 5px;
+    padding: 1rem;
+    border-radius: 0.5rem;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 1.5rem;
 
 
     & .product-container__img {
         height: 100%;
         width: 40%;
-        border-radius: 5px;
+        border-radius: 0.5rem;
         object-fit: cover;
     }
 
@@ -22,7 +22,7 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 0.5rem;
         position: relative;
 
         & .button-remove-product {
@@ -43,12 +43,12 @@
         }
 
         & .product-title {
-            text-shadow: -2px -2px 29px rgba(0,0,0,0.34);
+            text-shadow: -0.2rem -0.2rem 2.9rem rgba(0,0,0,0.34);
         }
 
         & .product-price {
             font-weight: 600;
-            font-size: 16px;
+            font-size: 1.6rem;
         }
 
         & .button-qtd-container {
@@ -56,19 +56,19 @@
             height: fit-content;
             background-color: #c6c6c674;
             font-weight: 600;
-            padding: 0px 10px;
-            border-radius: 5px;
+            padding: 0rem 1rem;
+            border-radius: 0.5rem;
             align-self: end;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 1rem;
 
             & .button-qtd-container__button {
                 color: var(--red);
                 padding: 0;
 
                 & .button-qtd-container__icon {
-                    font-size: 15px;
+                    font-size: 1.5rem;
                 }
             }
 

@@ -8,14 +8,15 @@
     --gray: #ECECEC;
     --font: 'Poppins', sans-serif;
     --handwritten-font: "Borel", cursive;
-    --letter-spacing: 1px;
+    --letter-spacing: 0.1rem;
     --color-transition: color 400ms ease-in-out;
     --bgc-transition: background-color 400ms ease-in-out;
-    --txt-shadow: 1px 3px 9px rgba(0,0,0,0.6);
+    --txt-shadow: 0.1rem 0.3rem 0.9rem rgba(0,0,0,0.6);
 }
 
 html {
     height: 100dvh;
+    font-size: 62.5%;
     font-family: var(--font);
 }
 
@@ -25,31 +26,31 @@ body {
 }
 
 h1 {
-    font-size: 150px;
+    font-size: 15rem;
     letter-spacing: var(--letter-spacing);
     color: var(--yellow);
     text-transform: uppercase;
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 4rem;
     letter-spacing: (var(--letter-spacing));
     text-transform: uppercase;
     text-shadow: var(--txt-shadow);
 }
 
 h3 {
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
     letter-spacing: var(--title-spacing);
 }
 
 h4 {
-    font-size: 18px;
+    font-size: 1.8rem;
 }
 
 p, a, li, span {
-    font-size: 15px;
+    font-size: 1.5rem;
     letter-spacing: var(--letter-spacing);
 }
 
@@ -57,7 +58,7 @@ p, a, li, span {
     width: 100%;
     text-align: justify;
     text-shadow: var(--txt-shadow);
-    padding: 50px 100px;
+    padding: 5rem 10rem;
     background-color: var(--black);
 
     & .title-container {
@@ -83,10 +84,10 @@ button {
     cursor: pointer;
     background-color: transparent;
     font-family: var(--font);
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 700;
     text-transform: uppercase;
-    padding: 10px 20px;
+    padding: 1rem 2rem;
     border: 0;
-    border-radius: 10px;
+    border-radius: 1rem;
 }
