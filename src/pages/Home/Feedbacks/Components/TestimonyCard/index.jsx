@@ -1,13 +1,12 @@
-import { React, useRef } from 'react'
+import { React } from 'react'
 import './style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar} from '@fortawesome/free-solid-svg-icons'
 
 
 export function TestimonyCard( { name, testimony }) {
-    const carousel = useRef(null)
     return (
-        <div className='testimony-container' ref={carousel}>
+        <div className='testimony-container'>
             <p className='testimony-container__p'>
                 {testimony}
             </p>

@@ -1,4 +1,7 @@
 .feedback-section {
+    background-image: url(../../../assets/images/aboutUs_bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     color: var(--white);
     display: flex;
     flex-direction: column;
@@ -9,12 +12,23 @@
         text-align: center;
     }
 
-    & .feedback-section__content {
+    & .feedback-section__carousel {
         max-width: 35rem;
         display: flex;
         gap: 2rem;
-        overflow-x: hidden;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+
+        &&::-webkit-scrollbar {
+            display: none;
+        }
+
+        & .carousel__testimony-card-container {
+            display: flex;
+            width: 100%;
+        }
     }
+
 
     & .arrow {
         position: absolute;
@@ -22,10 +36,6 @@
         color: var(--red);
         top: 50%;
         padding: 0;
-
-        &:hover {
-            color: var(--red-hover);
-        }
     }
 
     & .arrow--left {
@@ -36,5 +46,9 @@
     & .arrow--right {
         right: 17rem;
         top: 17rem;
+    }
+
+    & .button-disabled {
+        display: none;
     }
 }
