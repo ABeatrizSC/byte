@@ -1,0 +1,54 @@
+.feedback-section {
+    background-image: url(../../../assets/images/home_bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    & .feedback-section__title {
+        text-align: center;
+    }
+
+    & .feedback-section__carousel {
+        max-width: 35rem;
+        display: flex;
+        gap: 2rem;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+
+        &&::-webkit-scrollbar {
+            display: none;
+        }
+
+        & .carousel__testimony-card-container {
+            display: flex;
+            width: 100%;
+        }
+    }
+
+
+    & .arrow {
+        position: absolute;
+        font-size: 2rem;
+        color: var(--red);
+        top: 50%;
+        padding: 0;
+    }
+
+    & .arrow--left {
+        left: 17rem;
+        top: 17rem;
+    }
+
+    & .arrow--right {
+        right: 17rem;
+        top: 17rem;
+    }
+
+    & .button-disabled {
+        display: none;
+    }
+}

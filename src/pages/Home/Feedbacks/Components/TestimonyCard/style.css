@@ -1,0 +1,32 @@
+& .testimony-container {
+    min-width: 35rem;
+    min-height: 12rem;
+    color: var(--black);
+    background-color: var(--gray);
+    text-shadow: none;
+    padding: 1.5rem;
+    margin-top: 2.5rem;
+    border-bottom: 0.4rem inset var(--yellow-hover);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+
+    & .testimony-container__p {
+        font-weight: 500;
+    }
+
+    & .testimony-container__client-information-container {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+
+        & .rating-container {
+            display: flex;
+            gap: 0.2rem;
+            color: var(--red);
+        }
+    }
+}
