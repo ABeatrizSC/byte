@@ -2,7 +2,7 @@ import logo from '../../assets/images/logoByte.png';
 import './style.css';
 import { Nav } from '../Nav'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' 
-import { faFacebook, faFacebookF, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 export function Footer() {
     return (
@@ -20,10 +20,14 @@ export function Footer() {
                     <h3>Entre em contato</h3>
                     <ul className='contact-list'>
                         <li>
+                            (14) 91234-5678
+                        </li>
+                        <li>
                             contato@byte.com.br
                         </li>
                         <li>
-                            (14) 91234-5678
+                            Rua Exemplo, 123,
+                            Botucatu-SP
                         </li>
                     </ul>
                 </div>
