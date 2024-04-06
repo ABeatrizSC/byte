@@ -29,11 +29,11 @@
 =======
         & .title-container {
             & h3 {
-                font-family: var(--handwritten-font);
-                font-size: 1.7rem;
-                color: var(--yellow);
-                font-weight: 400;
-                text-shadow: var(--txt-shadow);
+              font-family: var(--handwritten-font);
+              font-size: 1.7rem;
+              color: var(--yellow);
+              font-weight: 400;
+              text-shadow: var(--txt-shadow);
             }
         }
 
