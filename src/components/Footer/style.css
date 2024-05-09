@@ -19,16 +19,17 @@ footer {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        gap: 1rem;
+        gap: 5rem;
         align-self: stretch;
+        flex-wrap: wrap;
 
         & .footer-columns {
+            min-width: fit-content;
             flex: 1;
             display: flex;
             flex-flow: column;
             gap: 1rem;
             text-align: center;
-            width: 20rem;
 
             & .nav-list {
                 flex-flow: column;
