@@ -36,6 +36,7 @@
         }
 
         & .text-container {
+            text-align: justify;
             margin-top: 2rem;
             display: flex;
             flex-direction: column;

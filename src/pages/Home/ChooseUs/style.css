@@ -9,6 +9,7 @@
         color: var(--white);
         text-align: center;
     }
+
     & .benefits-container {
         width: 100%;
         color: var(--yellow);
@@ -21,6 +22,7 @@
         margin-top: 5rem;
 
         & div {
+            min-width: max-content;
             display: flex;
             flex-direction: column;
             justify-content: center;
