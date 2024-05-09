@@ -1,0 +1,40 @@
+.chooseUs-section {
+    background-image: url(../../../assets/images/chooseUs_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    & .chooseUs-section__title {
+        color: var(--white);
+        text-align: center;
+    }
+    & .benefits-container {
+        width: 100%;
+        color: var(--yellow);
+        font-weight: 700;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-around;
+        gap: 5rem;
+        flex-wrap: wrap;
+        margin-top: 5rem;
+
+        & div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex: 1;
+
+             & img {
+                width: 7rem;
+            } 
+
+            span {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
