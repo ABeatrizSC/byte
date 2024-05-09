@@ -65,7 +65,6 @@ a {
 
 .home-section {
     width: 100%;
-    text-align: justify;
     text-shadow: var(--txt-shadow);
     padding: 5rem 10rem;
     background-color: var(--black);
