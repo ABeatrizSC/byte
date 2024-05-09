@@ -11,10 +11,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 2rem;
+        gap: 5rem;
         flex-wrap: wrap;
 
-        & .content__contacts {  
+        & .content__contacts { 
             display: flex;
             flex-direction: column;
             gap: 5rem;
@@ -49,6 +49,12 @@
                     }
                 }
             }
+        }
+
+        & .localization__map {
+            width: 55rem;
+            height: 35rem;
+            border: 0;
         }
     }
 }
