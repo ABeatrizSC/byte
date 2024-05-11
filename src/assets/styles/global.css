@@ -2,9 +2,9 @@
     --black: #000;
     --white: #fff;
     --yellow: #ffc200;
-    --yellow-hover: #ffc400c2;
+    --yellow-hover: #d4a300;
     --red: #b01e1c;
-    --red-hover: #b01e1c65;
+    --red-hover: #8d1a18;
     --gray: #ECECEC;
     --font: 'Poppins', sans-serif;
     --handwritten-font: "Borel", cursive;
@@ -98,4 +98,5 @@ button {
     padding: 1rem 2rem;
     border: 0;
     border-radius: 1rem;
+    transition: var(--bgc-transition);
 }

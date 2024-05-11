@@ -52,7 +52,6 @@
             & button {
                 margin-top: 2rem;
                 background-color: var(--yellow);
-                transition: var(--bgc-transition);
     
                 &:hover {
                     background-color: var(--yellow-hover);
