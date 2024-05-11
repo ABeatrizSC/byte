@@ -42,7 +42,7 @@ export function Contact() {
                     </div>
                 </div>
                 <div className='content__localization'>
-                    <iframe className='localization__map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.5199758619515!2d-48.46372842544741!3d-22.93106973873787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c6df7bdb8e6f37%3A0xd98991982dd352a7!2sFatec%20-%20Faculdade%20de%20Tecnologia%20de%20Botucatu!5e0!3m2!1spt-BR!2sbr!4v1715123955400!5m2!1spt-BR!2sbr" allowfullscreen={false} loading={'lazy'} referrerpolicy={'no-referrer-when-downgrade'}></iframe>
+                    <iframe className='localization__map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.5199758619515!2d-48.46372842544741!3d-22.93106973873787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c6df7bdb8e6f37%3A0xd98991982dd352a7!2sFatec%20-%20Faculdade%20de%20Tecnologia%20de%20Botucatu!5e0!3m2!1spt-BR!2sbr!4v1715123955400!5m2!1spt-BR!2sbr" allowFullScreen={false} loading={'lazy'} referrerPolicy={'no-referrer-when-downgrade'}></iframe>
                 </div>
             </div>
         </section>
