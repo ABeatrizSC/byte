@@ -9,7 +9,10 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    position: relative;
+    position: sticky;
+    top: 0;
+    right: 0;
+    z-index: 100;
 
     & .logo {
         width: 8rem;
