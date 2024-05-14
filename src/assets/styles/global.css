@@ -91,6 +91,7 @@ button {
     height: fit-content;
     cursor: pointer;
     background-color: transparent;
+    color: var(--black);
     font-family: var(--font);
     font-size: 1.6rem;
     font-weight: 700;
