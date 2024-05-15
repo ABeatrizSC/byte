@@ -69,20 +69,21 @@ a {
     padding: 5rem 10rem;
     background-color: var(--black);
 
-    & .title-container {
-        & h3 {
-            font-family: var(--handwritten-font);
-            font-size: 18px;
-            color: var(--yellow);
-            font-weight: 400;
-            text-shadow: var(--txt-shadow);
-        }
-    }
-
+    
     & .text-highlight {
         color: var(--yellow);
         text-transform: uppercase;
         font-weight: 600;
+    }
+}
+
+& .title-container {
+    & h3 {
+        font-family: var(--handwritten-font);
+        font-size: 18px;
+        color: var(--yellow);
+        font-weight: 400;
+        text-shadow: var(--txt-shadow);
     }
 }
 
