@@ -29,8 +29,8 @@ const BannerCarousel: React.FC<BannerCarouselProps> = (props) => {
         pagination={paginationConfig}
         autoplay={autoplayConfig}
       >
-        {children.map((child) => (
-          <SwiperSlide>{child}</SwiperSlide>
+        {children.map((child, i) => (
+          <SwiperSlide key={i}>{child}</SwiperSlide>
         ))}
       </Swiper>
     </div>

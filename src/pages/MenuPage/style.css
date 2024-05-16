@@ -2,4 +2,18 @@
     background-color: var(--black);
     color: var(--white);
     text-align: center;
+
+    & .menu-page-section__title-container {
+        padding: 5rem;
+    }
+
+    & .menu-page-section__menu-container {
+        padding: 0 10rem 10rem;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5rem;
+        vertical-align: middle;
+    }
 }
