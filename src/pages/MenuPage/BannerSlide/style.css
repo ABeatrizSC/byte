@@ -1,0 +1,19 @@
+.banner-slide {
+    width: 100%;
+    position: relative;
+
+    & .banner-slide__image {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    & .banner-slide__text {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}
