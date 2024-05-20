@@ -1,5 +1,6 @@
 import './style.css'
 import lancheImg from '../../../components/Header/Components/CartProduct/lancheExemplo.jpg'
+import { Link } from 'react-router-dom'
 
 export function MenuSection() {
   return (
@@ -50,9 +51,11 @@ export function MenuSection() {
           </button>
         </div>
       </div>
-      <button className='menu-section__button-menu' onClick={() => {location.href = "#"}}>
-        Ver cardápio completo
-      </button>
+      <Link to='/cardapio'>
+        <button className='menu-section__button-menu'>
+          Ver cardápio completo
+        </button>
+      </Link>
     </section>
   )
 }
