@@ -7,6 +7,7 @@
     padding: 1.5rem;
     margin-top: 2.5rem;
     border-bottom: 0.4rem inset var(--yellow-hover);
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -36,15 +37,16 @@
         }
     }
 
-    & .card__button {
-        background-color: var(--yellow);
-
-        &:hover {
-            background-color: var(--yellow-hover);
-        }
-
-        & a:hover {
-            color: #000!important;
+    & .card__buttons-container {
+        display: flex;
+        gap: 1rem;
+        & .details-button,  .add-button {
+            background-color: var(--yellow);
+    
+            &:hover {
+                background-color: var(--yellow-hover);
+            }
         }
     }
+
 }

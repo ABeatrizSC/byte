@@ -1,8 +1,10 @@
 import React from 'react'
 import './style.css'
 import heroBg from '../../../assets/images/hero_img.jpg'
+import { useNavigate } from 'react-router-dom'
 
 export function Hero() {
+  const navigate = useNavigate()
   return (
     <section className='hero-section'>
         <img className='hero-section__img' src={heroBg} alt="Hamburguer 'GameOver' pegando fogo em um fundo de madeira" />
@@ -19,7 +21,7 @@ export function Hero() {
             </h1>
             <div className='subtitle-container'>
               <p>Temos um cardápio recheado de produtos de alta qualidade. Peça já o melhor hambúrguer da cidade!</p>
-              <button>Ver cardápio</button>
+              <button onClick={() => navigate("/cardapio")}>Ver cardápio</button>
             </div>
         </div>
     </section>

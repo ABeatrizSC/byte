@@ -1,8 +1,13 @@
 import './style.css'
-import lancheImg from '../../../components/Header/Components/CartProduct/lancheExemplo.jpg'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import ProductCard from '../../../components/ProductCard'
+import { MenuPage } from '../../MenuPage'
+import { productsMock } from "../../../components/ProductCard/productsMock";
 
 export function MenuSection() {
+
+  const navigate = useNavigate()
+
   return (
     <section className='home-section menu-section'>
       <div className='title-container menu-section__title'>
@@ -10,52 +15,13 @@ export function MenuSection() {
         <h2>Os mais pedidos</h2>
       </div>
       <div className='menu-container'>
-        <div className='product'>
-          <img className='product__img' src={lancheImg} alt="Nome do lanche" />
-          <div className='product__information-container'>
-            <span className='product-name'>TeraByte</span>
-            <span className='product-price'>R$ 41,99</span>
-          </div>
-          <button className='product__button' onClick={() => {location.href = "#"}}>
-            Detalhes
-          </button>
-        </div>
-        <div className='product'>
-          <img className='product__img' src={lancheImg} alt="Nome do lanche" />
-          <div className='product__information-container'>
-            <span className='product-name'>TeraByte</span>
-            <span className='product-price'>R$ 41,99</span>
-          </div>
-          <button className='product__button' onClick={() => {location.href = "#"}}>
-            Detalhes
-          </button>
-        </div>
-        <div className='product'>
-          <img className='product__img' src={lancheImg} alt="Nome do lanche" />
-          <div className='product__information-container'>
-            <span className='product-name'>TeraByte</span>
-            <span className='product-price'>R$ 41,99</span>
-          </div>
-          <button className='product__button' onClick={() => {location.href = "#"}}>
-            Detalhes
-          </button>
-        </div>
-        <div className='product'>
-          <img className='product__img' src={lancheImg} alt="Nome do lanche" />
-          <div className='product__information-container'>
-            <span className='product-name'>TeraByte</span>
-            <span className='product-price'>R$ 41,99</span>
-          </div>
-          <button className='product__button' onClick={() => {location.href = "#"}}>
-            Detalhes
-          </button>
-        </div>
+        {productsMock.slice(0, 4).map((product, i) => (
+          <ProductCard key={i} {...product}/>
+        ))}
       </div>
-      <Link to='/cardapio'>
-        <button className='menu-section__button-menu'>
-          Ver cardápio completo
-        </button>
-      </Link>
+      <button className='menu-section__button-menu' onClick={() => {navigate("/cardapio")}}>
+        Ver cardápio completo
+      </button>
     </section>
   )
 }

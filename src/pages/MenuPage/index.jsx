@@ -1,7 +1,7 @@
 import "./style.css";
 import "swiper/css";
 import ProductCard from "../../components/ProductCard";
-import lancheImg from "../../components/Header/Components/CartProduct/lancheExemplo.jpg";
+import { productsMock } from "../../components/ProductCard/productsMock";
 import BannerCarousel from "./BannerCarousel";
 import BannerSlide from "./BannerSlide";
 import BannerByteBurguer from "../../assets/images/banners/byte-burguer-banner.png";
@@ -9,44 +9,6 @@ import BannerTrojanBurguer from "../../assets/images/banners/trojan-burguer-bann
 import BannerCtrlEat from "../../assets/images/banners/ctrlEat-banner.png";
 
 export function MenuPage() {
-  const productsMock = [
-    {
-      id: 1,
-      name: "Trojan",
-      price: "34.99",
-      image: lancheImg,
-      size: "MEDIUM",
-    },
-    {
-      id: 12,
-      name: "Byte burguer",
-      price: "29.99",
-      image: lancheImg,
-      size: "MEDIUM",
-    },
-    {
-      id: 1,
-      name: "Game Over",
-      price: "24.99",
-      image: lancheImg,
-      size: "MEDIUM",
-    },
-    {
-      id: 1,
-      name: "Ctrl + Eat",
-      price: "49.99",
-      image: lancheImg,
-      size: "MEDIUM",
-    },
-    {
-      id: 1,
-      name: "Ctrl + Eat",
-      price: "49.99",
-      image: lancheImg,
-      size: "MEDIUM",
-    },
-  ];
-
   return (
     <section className="menu-page-section">
       <BannerCarousel>
