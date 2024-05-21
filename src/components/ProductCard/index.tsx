@@ -2,14 +2,16 @@ import React from "react";
 import "./style.css";
 import { ProductCardProps } from "./type";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "react-use-cart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
 
 const ProductCard: React.FC<ProductCardProps> = (props) => {
     const {id, name, price, size, image} = props;
     const productAlt = `Imagem promocional do nosso lanche chamado ${name}`;
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const { addItem } = useCart();
 
     return (
         <div className={`product-card product-card--${size}`}>
@@ -23,7 +25,7 @@ const ProductCard: React.FC<ProductCardProps> = (props) => {
                 <button className='details-button' onClick={() => {navigate(`/cardapio/${id}`)}}>
                     Detalhes
                 </button>
-                <button className='add-button'>
+                <button className='add-button' onClick={() => addItem(props)}>
                     <FontAwesomeIcon icon={faCartPlus}/>
                 </button>
             </div>

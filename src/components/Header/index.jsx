@@ -1,10 +1,10 @@
+import logo from '../../assets/images/logoByte.png';
 import { Nav } from '../Nav'
 import { Cart } from './Components/Cart'
 import { useState } from 'react';
-import logo from '../../assets/images/logoByte.png';
-import './style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' 
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import './style.css';
 
 export function Header() {
     const [isCartOpened, setIsCartOpened] = useState(false)

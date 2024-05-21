@@ -1,27 +1,26 @@
 import React from 'react'
 import './style.css'
-import lancheImg from '../../../../assets/images/lancheExemplo.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' 
 import { faMinus, faPlus, faXmarkCircle } from '@fortawesome/free-solid-svg-icons'
 
-export function CartProduct() {
+export function CartProduct( { id, name, price, image, quantity, removeItem, updateItemQuantity } ) {
   return (
     <div className='product-container'>
-      <img  className='product-container__img' src={lancheImg} alt="Imagem do produto" />
+      <img  className='product-container__img' src={image} alt="Imagem do produto" />
       <div className='product-container__information'>
-        <h4 className='product-title'>TeraByte</h4>
-        <p className='product-price'>R$ 41,99</p>
+        <h4 className='product-title'>{name}</h4>
+        <p className='product-price'>R$ {price}</p>
         <div className='button-qtd-container'>
           <button className='button-qtd-container__button'>
-            <FontAwesomeIcon icon={faMinus} className='button-qtd-container__icon' />
+            <FontAwesomeIcon icon={faMinus} className='button-qtd-container__icon' onClick={() => updateItemQuantity(id, quantity - 1)} />
           </button>
-          <p className='button-qtd-container__p'>1</p>
-          <button className='button-qtd-container__button'>
+          <p className='button-qtd-container__p'>{quantity}</p>
+          <button className='button-qtd-container__button' onClick={() => updateItemQuantity(id, quantity + 1)}>
             <FontAwesomeIcon icon={faPlus} className='button-qtd-container__icon' />
           </button>
         </div>
         <button className='button-remove-product'>
-          <FontAwesomeIcon icon={faXmarkCircle} className='button-remove-product__icon' />
+          <FontAwesomeIcon icon={faXmarkCircle} className='button-remove-product__icon' onClick={() => removeItem(id)}/>
         </button>
       </div>
     </div>
