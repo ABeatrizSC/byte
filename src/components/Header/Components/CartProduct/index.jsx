@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css'
-import lancheImg from './lancheExemplo.jpg'
+import lancheImg from '../../../../assets/images/lancheExemplo.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' 
 import { faMinus, faPlus, faXmarkCircle } from '@fortawesome/free-solid-svg-icons'
 

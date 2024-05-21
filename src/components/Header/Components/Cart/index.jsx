@@ -19,7 +19,7 @@ export function Cart({ isCartOpened, setIsCartOpened }) {
             </div>
             <div className='cart__footer'>
                 <p className='cart-price'>Total: R$ 00,00</p>
-                <button className='button-finalize-cart'>Finalizar carrinho</button>
+                <button className='button-finalize-cart' onClick={() => {window.location.href="/checkout"}}>Finalizar carrinho</button>
             </div>
         </aside>
     )
