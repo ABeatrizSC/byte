@@ -1,7 +1,6 @@
 import './style.css'
 import { useNavigate } from 'react-router-dom'
 import ProductCard from '../../../components/ProductCard'
-import { MenuPage } from '../../MenuPage'
 import { productsMock } from "../../../components/ProductCard/productsMock";
 
 export function MenuSection() {

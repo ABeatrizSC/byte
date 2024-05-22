@@ -1,7 +1,8 @@
 export interface ProductCardProps {
-    size: "SMALL" | "MEDIUM" | "BIG";
     id: string;
     name: string;
+    description: string;
     price: number;
     image: string;
+    imagePNG: string;
 }
