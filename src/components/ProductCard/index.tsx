@@ -8,7 +8,7 @@ import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
 
 const ProductCard: React.FC<ProductCardProps> = (props) => {
-    const {id, name, price, image, description} = props;
+    const {id, name, price, image} = props;
     const productAlt = `Imagem promocional do nosso lanche chamado ${name}`;
     const navigate = useNavigate();
     const { addItem } = useCart();
