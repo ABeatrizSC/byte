@@ -18,7 +18,29 @@ export function MenuPage() {
       </BannerCarousel>
       <div className="title-container menu-page-section__title-container">
         <h3>Menu</h3>
-        <h2>Lanches</h2>
+        <h2>Nosso cardápio</h2>
+      </div>
+      <div className="menu-page-section__filters-container">
+        <div>
+          <input type="radio" name='filter' id='all' value='all'/>
+          <label htmlFor="all">Todos</label>
+        </div>
+        <div>
+          <input type="radio" name='filter' id='burger' value='burger'/>
+          <label htmlFor="burger">Lanches</label>
+        </div>
+        <div>
+          <input type="radio" name='filter' id='combos' value='combos'/>
+          <label htmlFor="combos">Combos</label>
+        </div>
+        <div>
+          <input type="radio" name='filter' id='drinks' value='drinks'/>
+          <label htmlFor="drinks">Bebidas</label>
+        </div>
+        <div>
+          <input type="radio" name='filter' id='desserts' value='desserts'/>
+          <label htmlFor="desserts">Sobremesas</label>
+        </div>
       </div>
       <div className="menu-page-section__menu-container">
         {productsMock.map((product, i) => (

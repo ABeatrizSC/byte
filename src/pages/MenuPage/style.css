@@ -7,6 +7,36 @@
         padding: 5rem;
     }
 
+    & .menu-page-section__filters-container {
+        margin-bottom: 3rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        
+        & div {
+            min-width: max-content;
+            text-transform: uppercase;
+            background-color: var(--yellow);
+            color: var(--black);
+            font-weight: bolder;
+            padding: 1rem;
+            border-radius: 1rem;
+
+            & input {
+                display: none;
+
+                &:checked {
+                    background-color: var(--red);
+                }
+            }
+
+            & label {
+                cursor: pointer;
+            }
+        }
+    }
+
     & .menu-page-section__menu-container {
         padding: 0 10rem 10rem;
         width: 100%;
