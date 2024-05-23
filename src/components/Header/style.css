@@ -16,6 +16,7 @@ header {
 
     & .logo {
         width: 8rem;
+        cursor: pointer;
     }
 
     & .links-container {

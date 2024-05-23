@@ -6,7 +6,7 @@ import qualityIcon from '../../../assets/images/quality-icon.png'
 
 export function ChooseUs() {
   return (
-    <section className='home-section chooseUs-section'>
+    <section className='home-section chooseUs-section' id='chooseus'>
         <div className='title-container chooseUs-section__title'>
             <h3>O que oferecemos</h3>
             <h2>Vantagens exclusivas</h2>

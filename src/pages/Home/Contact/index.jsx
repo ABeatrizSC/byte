@@ -6,7 +6,7 @@ import facebookIcon from '../../../assets/images/facebook-icon.png'
 
 export function Contact() {
     return (
-        <section className='home-section contact-section'>
+        <section className='home-section contact-section' id='contact'>
             <div className='title-container'>
                 <h3>Fale conosco</h3>
                 <h2>Contato</h2>

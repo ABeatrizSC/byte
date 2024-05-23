@@ -23,7 +23,7 @@ export function Feedbacks() {
   }
 
   return (
-    <section className='home-section feedback-section'>
+    <section className='home-section feedback-section' id='feedbacks'>
       <div className='title-container feedback-section__title'>
         <h3>Depoimentos</h3>
         <h2>O quê nossos clientes dizem</h2>

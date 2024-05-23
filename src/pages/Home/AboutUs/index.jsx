@@ -4,7 +4,7 @@ import './style.css'
 
 export function AboutUs() {
   return (
-    <section className='home-section aboutUs-section'>
+    <section className='home-section aboutUs-section'id='aboutus'>
         <div className='aboutUs-section__image-container'>
           <img src={aboutUsImg} alt="" />
         </div>

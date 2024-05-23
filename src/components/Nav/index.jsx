@@ -1,22 +1,26 @@
 import '../Nav/style.css'
 
 export function Nav() {
+    console.log(window.location.href)
     return (
         <ul className='nav-list'>
             <li className='nav-list__item'>
-                <a href="#">Home</a>
+                <a href="https://byte-theta.vercel.app/#home">Home</a>
             </li>
             <li className='nav-list__item'>
-                <a href="#">Cardápio</a>
+                <a href="https://byte-theta.vercel.app/#menu">Cardápio</a>
             </li>
             <li className='nav-list__item'>
-                <a href="#">Quem somos</a>
+                <a href="https://byte-theta.vercel.app/#aboutus">Quem somos</a>
             </li>
             <li className='nav-list__item'>
-                <a href="#">Feedbacks</a>
+                <a href="https://byte-theta.vercel.app/#feedbacks">Feedbacks</a>
+            </li>
+            <li>
+                <a href="https://byte-theta.vercel.app/#chooseus">Vantagens</a>
             </li>
             <li className='nav-list__item'>
-                <a href="#">Contato</a>
+                <a href="https://byte-theta.vercel.app/#contact">Contato</a>
             </li>
         </ul> 
     )

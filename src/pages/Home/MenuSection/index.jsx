@@ -8,7 +8,7 @@ export function MenuSection() {
   const navigate = useNavigate()
 
   return (
-    <section className='home-section menu-section'>
+    <section className='home-section menu-section' id='menu'>
       <div className='title-container menu-section__title'>
         <h3>Experimente já</h3>
         <h2>Os mais pedidos</h2>
