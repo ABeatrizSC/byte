@@ -59,10 +59,6 @@
                 &:hover {
                     background-color: var(--yellow-hover);
                 }
-
-                & a:hover {
-                    color: #000!important;
-                }
             }
         }      
     }

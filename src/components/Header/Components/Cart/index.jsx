@@ -1,5 +1,5 @@
 import React from 'react'
-import { CartProduct } from '../CartProduct'
+import { CartProduct } from '../../../CartProduct'
 import './style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' 
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
@@ -24,18 +24,22 @@ export function Cart({ isCartOpened, setIsCartOpened }) {
                 </button>
             </div>
             <div className='cart__content'>
-                { (isEmpty) ? <p>Carrinho vazio.</p> : items.map((product, i) => 
+                { (isEmpty) ? <p>Carrinho vazio. Selecione um item para continuar com a compra.</p> : items.map((product, i) => 
                     (
-                        <CartProduct key={i} { ...product } removeItem={removeItem} updateItemQuantity={updateItemQuantity} />
+                        <CartProduct key={i} { ...product } removeItem={removeItem} updateItemQuantity={updateItemQuantity} isCartProduct />
                     )) 
                 }
             </div>
-            <div className='cart__footer'>
-                <p className='cart-price'>R$ {(cartTotal) ? cartTotal : '00,00'}</p>
-                <button className='button-finalize-cart' onClick={() => {window.location.href="/checkout"}}>
-                    Finalizar carrinho
-                </button>
-            </div>
+            {!(isEmpty) ? 
+                <div className='cart__footer'>
+                    <p className='cart-price'>R$ {(cartTotal) ? cartTotal : '00,00'}</p>
+                    <button className='button-finalize-cart' disabled={isEmpty} onClick={() => {window.location.href="/checkout"}}>
+                        Finalizar carrinho
+                    </button>
+                </div>
+                : 
+                <></>
+            }
         </aside>
     )
 }
