@@ -10,16 +10,16 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 export function App() {
   return (
     <>
-      <Header />
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/cardapio" element={<MenuPage />}/>
           <Route path="/cardapio/:id" element={<ProductDetails />}/>
           <Route path="/checkout" element={<Checkout />}/>
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </>
   )
 }
