@@ -1,7 +1,6 @@
 import '../Nav/style.css'
 
 export function Nav() {
-    console.log(window.location.href)
     return (
         <ul className='nav-list'>
             <li className='nav-list__item'>
