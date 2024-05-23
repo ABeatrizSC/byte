@@ -1,6 +1,7 @@
 import React from 'react'
-import { CartProduct } from '../../../CartProduct'
 import './style.css'
+import { CartProduct } from '../../../CartProduct'
+import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' 
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { useCart } from 'react-use-cart'
@@ -14,6 +15,8 @@ export function Cart({ isCartOpened, setIsCartOpened }) {
         updateItemQuantity,
         removeItem,
     } = useCart();
+    const navigate = useNavigate()
+
     return (
         <aside className={['cart', isCartOpened ? 'opened' : ''].join(' ')}>
             <div className='cart__header'>
@@ -33,7 +36,7 @@ export function Cart({ isCartOpened, setIsCartOpened }) {
             {!(isEmpty) ? 
                 <div className='cart__footer'>
                     <p className='cart-price'>R$ {(cartTotal) ? cartTotal : '00,00'}</p>
-                    <button className='button-finalize-cart' disabled={isEmpty} onClick={() => {window.location.href="/checkout"}}>
+                    <button className='button-finalize-cart' disabled={isEmpty} onClick={() => navigate("/checkout")}>
                         Finalizar carrinho
                     </button>
                 </div>
