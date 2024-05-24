@@ -43,6 +43,7 @@ export function Cart({ isCartOpened, setIsCartOpened }) {
                 : 
                 <></>
             }
+            <div id='cart-overlay' onClick={() => setIsCartOpened(!isCartOpened)}></div>
         </aside>
     )
 }
