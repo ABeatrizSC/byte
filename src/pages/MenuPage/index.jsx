@@ -21,23 +21,23 @@ export function MenuPage() {
         <h2>Nosso cardápio</h2>
       </div>
       <div className="menu-page-section__filters-container">
-        <div>
+        <div className="radio-filter-container">
           <input type="radio" name='filter' id='all' value='all'/>
           <label htmlFor="all">Todos</label>
         </div>
-        <div>
+        <div className="radio-filter-container">
           <input type="radio" name='filter' id='burger' value='burger'/>
           <label htmlFor="burger">Lanches</label>
         </div>
-        <div>
+        <div className="radio-filter-container">
           <input type="radio" name='filter' id='combos' value='combos'/>
           <label htmlFor="combos">Combos</label>
         </div>
-        <div>
+        <div className="radio-filter-container">
           <input type="radio" name='filter' id='drinks' value='drinks'/>
           <label htmlFor="drinks">Bebidas</label>
         </div>
-        <div>
+        <div className="radio-filter-container">
           <input type="radio" name='filter' id='desserts' value='desserts'/>
           <label htmlFor="desserts">Sobremesas</label>
         </div>

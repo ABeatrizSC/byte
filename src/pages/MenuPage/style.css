@@ -14,7 +14,7 @@
         justify-content: center;
         gap: 2rem;
         
-        & div {
+        & .radio-filter-container {
             min-width: max-content;
             text-transform: uppercase;
             background-color: var(--yellow);
@@ -22,13 +22,14 @@
             font-weight: bolder;
             padding: 1rem;
             border-radius: 1rem;
+            transition: var(--bgc-transition);
+
+            &:hover {
+                background-color: var(--yellow-hover);
+            }
 
             & input {
                 display: none;
-
-                &:checked {
-                    background-color: var(--red);
-                }
             }
 
             & label {
