@@ -1,0 +1,41 @@
+.login-section {
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .form-login-container {
+        & .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
+
+            & .form__input-container {
+                width: 25rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                & label {
+                    font-size: 1.8rem;
+                }
+
+                & input {
+                    padding:1rem;
+                    border-radius: 0.5rem;
+                    border: 0.1rem solid var(--black);
+                }
+            }
+
+            & .form__submit-button {
+                background-color: var(--yellow);
+                transition: var(--bgc-transition);
+
+                &:hover {
+                    background-color: var(--yellow-hover);
+                }
+            }
+        }
+    }
+}
