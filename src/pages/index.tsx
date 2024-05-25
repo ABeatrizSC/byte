@@ -8,8 +8,8 @@ export function Pages() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/*" element={<Store />} />
           <Route path="/admin/*" element={<Admin />} />
+          <Route path="/*" element={<Store />} />
         </Routes>
       </BrowserRouter>
     </>
