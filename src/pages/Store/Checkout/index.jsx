@@ -134,7 +134,7 @@ export function Checkout() {
           </div>
           <span className="total-cart">
             Total:
-            R$ {cartTotal}.toFixed(2).replace('.', ',')
+            R$ {cartTotal.toFixed(2).replace('.', ',')}
           </span>
           <button class="finalize-puchase-button">Finalizar pedido</button>
         </div>
