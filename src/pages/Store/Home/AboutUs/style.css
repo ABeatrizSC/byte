@@ -3,7 +3,7 @@
     gap: 5rem;
     flex-wrap: wrap-reverse;
     color: var(--white);
-    background-image: url(../../../assets/images/home_bg.jpg);
+    background-image: url(../../../../assets/images/home_bg.jpg);
     background-size: contain;
     background-repeat: no-repeat;
     
