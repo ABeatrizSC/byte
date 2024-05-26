@@ -5,11 +5,9 @@ import containerBg from "../../../assets/images/backgrounds/productDetails_bg.pn
 import { useParams } from "react-router-dom";
 import { useCart } from "react-use-cart";
 import { productsMock } from "../../../components/ProductCard/productsMock";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import { AddCartButton } from "../../../components/addCartButton";
 
 export function ProductDetails() {
-  const { addItem } = useCart();
   const { id } = useParams();
   const productSelected = productsMock.filter( product => product.id == id)[0];
   const alt = `imagem promocional do lanche ${productSelected.name}`;
@@ -28,13 +26,7 @@ export function ProductDetails() {
         <span className="ingredients-span">Ingredientes:</span>
         <p>{productSelected.description}</p>
         <span className="price-span">R$ {productSelected.price}</span>
-        <button
-          className="add-cart-button"
-          onClick={() => addItem(productSelected)}
-        >
-          <FontAwesomeIcon icon={faCartPlus} />
-          Adicionar ao carrinho
-        </button>
+        <AddCartButton props={productSelected} text/>
       </div>
     </section>
   );
