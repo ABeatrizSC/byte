@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import heroBg from "../../../../assets/images/hero_img.jpg";
+import heroBg from "../../../../assets/images/backgrounds/hero_img.jpg";
 import { useNavigate } from "react-router-dom";
 
 export function Hero() {

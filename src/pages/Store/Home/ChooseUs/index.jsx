@@ -1,8 +1,8 @@
 import React from "react";
 import "./style.css";
-import deliveryIcon from "../../../../assets/images/delivery-icon.png";
-import priceIcon from "../../../../assets/images/price-icon.png";
-import qualityIcon from "../../../../assets/images/quality-icon.png";
+import deliveryIcon from "../../../../assets/images/icons/delivery-icon.png";
+import priceIcon from "../../../../assets/images/icons/price-icon.png";
+import qualityIcon from "../../../../assets/images/icons/quality-icon.png";
 
 export function ChooseUs() {
   return (

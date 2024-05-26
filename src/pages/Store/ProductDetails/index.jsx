@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 import gameOver from "./gameOverDetails.png";
-import containerBg from "../../../assets/images/productDetails_bg.png";
+import containerBg from "../../../assets/images/backgrounds/productDetails_bg.png";
 import { useParams } from "react-router-dom";
 import { useCart } from "react-use-cart";
 import { productsMock } from "../../../components/ProductCard/productsMock";

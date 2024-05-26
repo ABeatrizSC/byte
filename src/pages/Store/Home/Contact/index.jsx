@@ -1,8 +1,8 @@
 import React from "react";
 import "./style.css";
-import whatsappIcon from "../../../../assets/images/whatsapp-icon.png";
-import instagramIcon from "../../../../assets/images/instagram-icon.png";
-import facebookIcon from "../../../../assets/images/facebook-icon.png";
+import whatsappIcon from "../../../../assets/images/icons/whatsapp-icon.png";
+import instagramIcon from "../../../../assets/images/icons/instagram-icon.png";
+import facebookIcon from "../../../../assets/images/icons/facebook-icon.png";
 
 export function Contact() {
   return (
