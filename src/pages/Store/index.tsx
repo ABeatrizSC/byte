@@ -6,6 +6,7 @@ import { Home } from "./Home";
 import { MenuPage } from "./MenuPage";
 import { ProductDetails } from "./ProductDetails";
 import { Checkout } from "./Checkout";
+import { NotFound } from "../NotFound";
 
 export const Store: React.FC = (props) => {
   return (
@@ -16,6 +17,7 @@ export const Store: React.FC = (props) => {
         <Route path="/cardapio" element={<MenuPage />} />
         <Route path="/cardapio/:id" element={<ProductDetails />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>
