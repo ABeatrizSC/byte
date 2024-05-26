@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "react-use-cart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import { Toaster, toast } from 'sonner';
 
 
 const ProductCard: React.FC<ProductCardProps> = (props) => {
@@ -15,6 +16,7 @@ const ProductCard: React.FC<ProductCardProps> = (props) => {
 
     return (
         <div className={`product-card`}>
+            <Toaster richColors={true} />
             <img className='card__img' src={image} alt={productAlt} />
             
             <div className='card__information-container'>
@@ -25,7 +27,7 @@ const ProductCard: React.FC<ProductCardProps> = (props) => {
                 <button className='details-button' onClick={() => {navigate(`/cardapio/${id}`)}}>
                     Detalhes
                 </button>
-                <button className='add-button' onClick={() => addItem(props)}>
+                <button className='add-button' onClick={() => {addItem(props); toast.success('Produto adicionado ao carrinho');}}>
                     <FontAwesomeIcon icon={faCartPlus}/>
                 </button>
             </div>
