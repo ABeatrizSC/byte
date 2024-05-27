@@ -7,6 +7,7 @@ import { MenuPage } from "./MenuPage";
 import { ProductDetails } from "./ProductDetails";
 import { Checkout } from "./Checkout";
 import { NotFound } from "../NotFound";
+import { BackTopButton } from "../../components/BackTopButton";
 
 export const Store: React.FC = (props) => {
   return (
@@ -19,6 +20,7 @@ export const Store: React.FC = (props) => {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <BackTopButton />
       <Footer />
     </>
   );
