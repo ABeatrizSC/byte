@@ -1,0 +1,47 @@
+.aboutUs-section {
+    display: flex;
+    gap: 5rem;
+    flex-wrap: wrap-reverse;
+    color: var(--white);
+    background-image: url(../../../../assets/images/backgrounds/home_bg.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    & .aboutUs-section__image-container {
+        height: 100%;
+        flex: 1;
+
+        & img {
+            width: 100%;
+            min-width: 30rem;
+            max-height: 40rem;
+            border-radius: 1.5rem;
+            object-fit: cover;
+            filter: brightness(0.4);
+        }
+    }
+
+    & .aboutUs-section__content {
+        flex: 1.3;
+        min-width: 40rem;
+
+        & .title-container {
+            & h3 {
+              font-family: var(--handwritten-font);
+              font-size: 1.7rem;
+              color: var(--yellow);
+              font-weight: 400;
+              text-shadow: var(--txt-shadow);
+            }
+        }
+
+        & .text-container {
+            text-align: justify;
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+    }
+
+}

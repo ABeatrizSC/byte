@@ -1,0 +1,15 @@
+& .add-cart-button {
+    background-color: var(--yellow);
+
+    &.details {  
+        margin-top: 2rem;
+        align-self: center;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    &:hover {
+        background-color: var(--yellow-hover);
+    }
+}

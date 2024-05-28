@@ -12,10 +12,14 @@
     top: 0;
     right: -37rem;
     transition-duration: 300ms;
-    z-index: 2;
+    z-index: 1;
     
     &.opened {
         right: 0;
+    }
+
+    &.opened #cart-overlay {
+        display: block;
     }
 
     & .cart__header {
@@ -68,5 +72,15 @@
                 background-color: var(--yellow-hover);
             }
         }
+    }
+
+    & #cart-overlay {
+        display: none;
+        background-color: transparent;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: calc(100% - 34rem);
+        height: 100%;
     }
 }
