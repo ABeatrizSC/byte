@@ -16,9 +16,12 @@ export function Header() {
             <img className='logo' src={logo} alt="Logo Byte" onClick={() => navigate("/")} />
             <div className='links-container'>
                 <Nav />
-                <button className='button-cart' onClick={() => setIsCartOpened(!isCartOpened)}>
-                    <FontAwesomeIcon icon={faCartShopping} className='button-cart__icon'/>
-                </button>
+                { !(window.location.href.indexOf('checkout') > 0) && 
+                    <button className='button-cart' onClick={() => setIsCartOpened(!isCartOpened)}>
+                        <FontAwesomeIcon icon={faCartShopping} className='button-cart__icon'/>
+                    </button>
+                
+                }
             </div>
             <Cart isCartOpened={isCartOpened} setIsCartOpened={setIsCartOpened}/>
         </header>

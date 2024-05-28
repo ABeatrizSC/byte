@@ -136,7 +136,10 @@ export function Checkout() {
             Total:
             R$ {cartTotal.toFixed(2).replace('.', ',')}
           </span>
-          <button class="finalize-puchase-button">Finalizar pedido</button>
+          {(items.length) ? 
+            <button class="finalize-puchase-button">Finalizar pedido</button>
+            : null
+          }
         </div>
       </form>
     </section>

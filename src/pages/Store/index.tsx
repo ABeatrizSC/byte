@@ -8,8 +8,10 @@ import { ProductDetails } from "./ProductDetails";
 import { Checkout } from "./Checkout";
 import { NotFound } from "../NotFound";
 import { BackTopButton } from "../../components/BackTopButton";
+import { useScroll } from "../../hooks/useScroll";
 
 export const Store: React.FC = (props) => {
+  useScroll();
   return (
     <>
       <Header />

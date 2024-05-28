@@ -1,25 +1,28 @@
+import { Link } from 'react-router-dom'
 import '../Nav/style.css'
 
 export function Nav() {
     return (
         <ul className='nav-list'>
             <li className='nav-list__item'>
-                <a href="https://byte-theta.vercel.app/#home">Home</a>
+                <Link to="/" >Home</Link>
             </li>
             <li className='nav-list__item'>
-                <a href="https://byte-theta.vercel.app/#aboutus">Quem somos</a>
+                <Link to="/#aboutus">Quem somos</Link>
             </li>
             <li className='nav-list__item'>
-                <a href="https://byte-theta.vercel.app/#menu">Cardápio</a>
+                <Link to="/#menu">
+                    Cardápio
+                </Link>
             </li>
             <li className='nav-list__item'>
-                <a href="https://byte-theta.vercel.app/#feedbacks">Feedbacks</a>
+                <Link to="/#feedbacks">Feedbacks</Link>
             </li>
             <li>
-                <a href="https://byte-theta.vercel.app/#chooseus">Vantagens</a>
+                <Link to="/#chooseus">Vantagens</Link>
             </li>
             <li className='nav-list__item'>
-                <a href="https://byte-theta.vercel.app/#contact">Contato</a>
+                <Link to="/#contact">Contato</Link>
             </li>
         </ul> 
     )

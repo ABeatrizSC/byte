@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export function Hero() {
   const navigate = useNavigate();
   return (
-    <section className='hero-section' id='#home'>
+    <section className='hero-section' id='home'>
       <img
         className="hero-section__img"
         src={heroBg}
