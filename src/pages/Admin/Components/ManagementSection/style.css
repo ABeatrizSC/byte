@@ -1,0 +1,51 @@
+.management-section {
+    height: 100dvh;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    overflow: hidden;
+
+    & .management-section__title {
+        font-size: 3rem;
+    }
+
+    & .management-section__controls-container {
+        max-width: 130rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 3rem;
+        flex-wrap: wrap;
+
+        & .controls-container__add-product-button {
+            background-color: var(--yellow);
+            transition: var(--bgc-transition);
+
+            &:hover {
+                background-color: var(--yellow-hover);
+            }
+        }
+    }
+
+    & .management-section__products-list-container {
+        width: 100%;
+        max-width: 130rem;
+
+        & h2 {
+            font-size: 1.7rem;
+            text-shadow: none;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        & ul {
+            max-height: 35rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+}
