@@ -1,0 +1,46 @@
+.management-section {
+    & .filters-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3rem;
+
+        & .status-filter-container {
+            & label {
+                margin-right: 2rem;
+                font-size: 1.7rem;
+            }
+
+            & select, option {
+                font-size: 1.7rem;
+            }
+        }
+    }
+
+    & .table-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        & table {
+            background-color: var(--white);
+            width: fit-content;
+            font-size: 1.5rem;
+            border-radius: 1rem;
+            display: block;
+            max-height: 40rem;
+            overflow-y: auto;
+
+            & tr:nth-child(even) {
+                background-color: #dddddd;
+
+            }        
+    
+            & a {
+                color: var(--black);
+                text-decoration: underline;
+            }
+        }
+    }
+}

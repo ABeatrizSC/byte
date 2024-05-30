@@ -1,0 +1,23 @@
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    height: 4rem;
+
+    & label {
+        font-size: 1.7rem;
+    }
+
+    & input {
+        padding: 2rem;
+        height: 100%;
+        border-radius: 1rem;
+        border: none;
+        font-size: 1.5rem;
+    }
+
+    & .filter-container__search-button {
+        background-color: var(--yellow);
+        height: 100%;
+    }
+}
