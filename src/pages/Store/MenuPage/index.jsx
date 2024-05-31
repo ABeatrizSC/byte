@@ -4,17 +4,19 @@ import ProductCard from "../../../components/ProductCard";
 import { productsMock } from "../../../components/ProductCard/productsMock";
 import BannerCarousel from "./BannerCarousel";
 import BannerSlide from "./BannerSlide";
-import BannerByteBurguer from "../../../assets/images/banners/byte-burguer-banner.png";
-import BannerTrojanBurguer from "../../../assets/images/banners/trojan-burguer-banner.png";
-import BannerCtrlEat from "../../../assets/images/banners/ctrlEat-banner.png";
+import combosBanner from "../../../assets/images/banners/combos_banner.jpg";
+import dataDinnerBanner from "../../../assets/images/banners/data-dinner_banner.jpg";
+import diaHamburguerBanner from "../../../assets/images/banners/dia-hamburguer_banner.jpg";
+import trojanBanner from "../../../assets/images/banners/trojan-burguer_banner.jpg";
 
 export function MenuPage() {
   return (
     <section className="menu-page-section">
       <BannerCarousel>
-        <BannerSlide image={BannerByteBurguer} key={1} />
-        <BannerSlide image={BannerTrojanBurguer} key={4} />
-        <BannerSlide image={BannerCtrlEat} key={3} />
+        <BannerSlide image={dataDinnerBanner} key={4} />
+        <BannerSlide image={diaHamburguerBanner} key={3} />
+        <BannerSlide image={combosBanner} key={1} />
+        <BannerSlide image={trojanBanner} key={2} />
       </BannerCarousel>
       <div className="title-container menu-page-section__title-container">
         <h3>Menu</h3>

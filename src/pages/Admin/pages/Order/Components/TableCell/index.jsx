@@ -4,10 +4,11 @@ import { NavLink } from 'react-router-dom'
 import { statusColors } from '../../statusColors';
 
 export function TableCell( item ) {
-  const { id, client, address, contact, paymentMethod, total, status } = item;
+  const { id, date, client, address, contact, paymentMethod, total, status } = item;
   return (
     <>
       <td>#{id}</td>
+      <td>{date}</td>
       <td>{client}</td>
       <td>{address}</td>
       <td>{contact}</td>

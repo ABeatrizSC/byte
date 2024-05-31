@@ -1,6 +1,7 @@
 export const orderMock = [
     {
         id: 1,
+        date: '30/05/23',
         client: 'João Silva',
         address: 'Rua Exemplo, Bairro Exemplo, 210 - 18611-560',
         contact: '(14)99999-9999 / email@email.com',
@@ -10,6 +11,7 @@ export const orderMock = [
     },
     {
         id: 2,
+        date: '30/05/23',
         client: 'Braga Pereira Roberto',
         address: 'Rua Exemplo, Bairro Exemplo, 210 - 18611-560',
         contact: '(14)99999-9999 / email@email.com',
@@ -19,6 +21,7 @@ export const orderMock = [
     },
     {
         id: 3,
+        date: '30/05/23',
         client: 'Maria Joaquina de Jesus',
         address: 'Rua Exemplo, Bairro Exemplo, 210 - 18611-560',
         contact: '(14)99999-9999 / email@email.com',
@@ -28,6 +31,7 @@ export const orderMock = [
     },
     {
         id: 4,
+        date: '30/05/23',
         client: 'Cláudia Santos Silva',
         address: 'Rua Exemplo, Bairro Exemplo, 210 - 18611-560',
         contact: '(14)99999-9999 / email@email.com',
@@ -37,6 +41,7 @@ export const orderMock = [
     },
     {
         id: 5,
+        date: '30/05/23',
         client: 'Jurandir Batista',
         address: 'Rua Exemplo, Bairro Exemplo, 210 - 18611-560',
         contact: '(14)99999-9999 / email@email.com',
@@ -46,6 +51,7 @@ export const orderMock = [
     },
     {
         id: 6,
+        date: '30/05/23',
         client: 'Marina Silva',
         address: 'Rua Exemplo, Bairro Exemplo, 210 - 18611-560',
         contact: '(14)99999-9999 / email@email.com',
@@ -55,6 +61,7 @@ export const orderMock = [
     },
     {
         id: 7,
+        date: '30/05/23',
         client: 'Marina Silva',
         address: 'Rua Exemplo, Bairro Exemplo, 210 - 18611-560',
         contact: '(14)99999-9999 / email@email.com',
@@ -64,6 +71,7 @@ export const orderMock = [
     },
     {
         id: 8,
+        date: '30/05/23',
         client: 'Marina Silva',
         address: 'Rua Exemplo, Bairro Exemplo, 210 - 18611-560',
         contact: '(14)99999-9999 / email@email.com',
