@@ -2,7 +2,7 @@
     & td {
         padding: 0.5rem 1rem;
         text-align: center;
-        min-width: 10rem;
+/*         min-width: 10rem; */
         max-width: 20rem;
         word-wrap: break-word;
     }

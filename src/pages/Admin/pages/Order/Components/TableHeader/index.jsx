@@ -6,6 +6,7 @@ export function TableHeader() {
     <thead>
         <tr>
             <th>Id</th>
+            <th>Data</th>
             <th>Cliente</th>
             <th>Endereço</th>
             <th>Contato</th>
