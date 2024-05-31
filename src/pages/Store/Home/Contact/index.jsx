@@ -60,6 +60,7 @@ export function Contact() {
             allowFullScreen={false}
             loading={"lazy"}
             referrerPolicy={"no-referrer-when-downgrade"}
+            title="Byte localização"
           ></iframe>
         </div>
       </div>
