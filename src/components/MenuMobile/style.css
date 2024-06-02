@@ -1,0 +1,39 @@
+.menu-mobile-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    & .nav-list {
+        width: 80%;
+        height: 50%;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        justify-content: space-between;
+
+        & .nav-list__item {
+            a {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    &.opened {
+        display: flex;
+    }
+
+    & .menu-mobile-container__button {
+        position: fixed;
+        top: 0;
+        right: 4rem;
+        color: var(--white);
+        font-size: 5rem;
+    }
+}

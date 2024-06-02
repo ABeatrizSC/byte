@@ -6,6 +6,11 @@
     flex-wrap: wrap;
     gap: 5rem;
 
+    @media screen and (max-width: 600px) {
+        padding: 5rem 5rem;
+        flex-direction: column;
+    }
+
     & .product-image-container {
         position: relative;
         flex: 1;
@@ -15,7 +20,11 @@
             top: 50%;
             left: 50%;
             width: 100%;
-            min-width: 550px;
+            min-width: 50rem;
+
+            @media screen and (max-width: 510px) {
+                min-width: 20rem;
+            }
         }
 
         & .product-img {
@@ -34,6 +43,11 @@
         flex-direction: column;
         padding: 5rem 0;
         gap: 2rem;
+
+        @media screen and (max-width: 600px) {
+            min-width: 20rem;
+            align-items: center;
+        }
         
         & .productDetails-title {
             text-align: center;

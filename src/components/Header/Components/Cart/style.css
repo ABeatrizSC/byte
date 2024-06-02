@@ -14,12 +14,28 @@
     transition-duration: 300ms;
     z-index: 1;
     
+    @media screen and (max-width: 945px){
+        display: none;
+        padding: 3rem;
+        width: 100%;
+        right: 0;
+        padding: 1.5rem 3rem;
+    }
+
     &.opened {
         right: 0;
+
+        @media screen and (max-width: 945px){
+            display: flex;
+        }
     }
 
     &.opened #cart-overlay {
         display: block;
+
+        @media screen and (max-width: 945px){
+            display: none;
+        }
     }
 
     & .cart__header {
@@ -91,21 +107,6 @@
 
 @media screen and (max-width: 945px){
     .cart {
-        display: none;
-        padding: 3rem;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        right: 0;
-        
-        &.opened {
-            display: flex;
-        }
-    
-        &.opened #cart-overlay {
-            display: none;
-        }
-
         & .cart__header {
             & .cart-title {
                 font-size: 2.5rem;

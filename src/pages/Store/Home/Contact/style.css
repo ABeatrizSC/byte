@@ -26,7 +26,7 @@
 
                 & .social-media-list__li {
                     display: flex;
-                    gap: 1rem;
+                    gap: 1.5rem;
                     align-items: center;
 
                     & .social-media-img {

@@ -10,7 +10,10 @@
     align-items: center;
     gap: 1.5rem;
 
-
+    @media screen and (max-width: 945px){
+        width: 80%;
+    }
+    
     & .product-container__img {
         height: 100%;
         width: 40%;

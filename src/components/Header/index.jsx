@@ -6,10 +6,12 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' 
 import { faCartShopping, faBars } from '@fortawesome/free-solid-svg-icons';
 import './style.css';
+import { MenuMobile } from '../MenuMobile';
 
 export function Header() {
-    const [isCartOpened, setIsCartOpened] = useState(false)
-    const navigate = useNavigate()
+    const [isCartOpened, setIsCartOpened] = useState(false);
+    const [isMenuOpened, setIsMenuOpened] = useState(false);
+    const navigate = useNavigate();
 
     return (
         <header>
@@ -23,10 +25,11 @@ export function Header() {
                         <FontAwesomeIcon icon={faCartShopping} className='header-icon'/>
                     </button>
                 }
-                <button className='header-button menu-mobile' onClick={() => setIsCartOpened(!isCartOpened)}>
+                <button className='header-button menu-mobile' onClick={() => setIsMenuOpened(!isMenuOpened)}>
                     <FontAwesomeIcon icon={faBars} className='header-icon' />
                 </button>
             </div>
+            <MenuMobile isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
             <Cart isCartOpened={isCartOpened} setIsCartOpened={setIsCartOpened}/>
         </header>
     )

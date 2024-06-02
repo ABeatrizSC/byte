@@ -22,7 +22,7 @@ html {
     height: 100dvh;
     font-size: 62.5%;
     @media screen and (max-width: 680px) {
-       font-size: 50%;
+       font-size: 53%;
     }
     font-family: var(--font);
 }

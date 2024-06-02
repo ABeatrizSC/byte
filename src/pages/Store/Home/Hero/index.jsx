@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export function Hero() {
   const navigate = useNavigate();
   return (
-    <section className='hero-section' id='home'>
+    <section className='home-section hero-section' id='home'>
       <div className="hero-section__text-container">
         <div className="byte-container">
           <div className="hr" />

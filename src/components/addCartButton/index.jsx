@@ -12,7 +12,7 @@ export function AddCartButton( { props, text } ) {
             <Toaster richColors={true} />
             <button className={['add-cart-button', (text) ? 'details' : ''].join(' ')} onClick={() => {addItem(props); toast.success('Produto adicionado ao carrinho');}}>
                 <FontAwesomeIcon icon={faCartPlus}/>
-                {(text) ? 'Adicionar produto ao carrinho': ''}
+                {(text) ? 'Adicionar ao carrinho': ''}
             </button>
         </>
     )
