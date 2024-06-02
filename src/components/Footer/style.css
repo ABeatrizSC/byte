@@ -10,6 +10,10 @@ footer {
     align-items: center;
     gap: 2.5rem;
 
+    @media screen and (max-width: 425px) {
+        padding: 1.5rem 5rem;
+    }
+
     p, li, a {
         color: var(--gray);
     }
@@ -21,7 +25,11 @@ footer {
         align-items: flex-start;
         gap: 5rem;
         align-self: stretch;
-        flex-wrap: wrap;
+
+        @media screen and (max-width: 867px){
+            flex-direction: column;
+            align-items: center;
+        }
 
         & .footer-columns {
             min-width: fit-content;
@@ -36,20 +44,35 @@ footer {
                 gap: 0.5rem;
             }
 
-            & .logo{
-                width: 8rem;
-            }
-
+            
             & .contact-list {
                 display: flex;
                 flex-flow: column;
                 gap: 0.5rem;
             }
         }
-
+        
         & .footer-columns.column-byte {
             text-align: start;
             padding: 0;
+
+            @media screen and (max-width: 867px){
+                text-align: center;
+            }
+            
+            & .logo{
+                width: 8rem;
+
+                @media screen and (max-width: 867px){
+                    width: 10rem;
+                    margin: auto;
+                }
+            }
+
+            @media screen and (max-width: 1007px){
+                min-width: 15rem;
+            }
+
         }
         
     }
@@ -58,6 +81,15 @@ footer {
         width: 100%;
         text-align: center;
         position: relative;
+
+        @media screen and (max-width: 867px){
+            margin-top: 2rem;
+            position: inherit;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 2rem;
+        }
         
         & p {
             font-size: 1.2rem;
@@ -70,6 +102,12 @@ footer {
             bottom: 50%;
             left: 0;
             transform: translateY(50%);
+
+            @media screen and (max-width: 867px){
+                position: inherit;
+                bottom: 0;
+                transform: translateY(0);
+            }
 
             & .social-media-list__item {
                 background-color: var(--yellow);

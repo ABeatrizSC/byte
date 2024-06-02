@@ -1,5 +1,6 @@
 & .product-container {
     width: 100%;
+    max-width: 50rem;
     height: 11rem;
     background-color: var(--white);
     color: var(--black);

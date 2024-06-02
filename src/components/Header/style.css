@@ -14,6 +14,10 @@ header {
     right: 0;
     z-index: 3;
 
+    @media screen and (max-width: 425px) {
+        padding: 1.5rem 5rem;
+    }
+
     & .logo {
         width: 8rem;
         cursor: pointer;
@@ -21,20 +25,32 @@ header {
 
     & .links-container {
         display: flex;
-        align-items: center;
         gap: 2rem;
 
-        & .button-cart {
+        & .nav-header-container {
+            @media screen and (max-width: 945px){
+                display: none;
+            }
+        }
+
+        & .header-button {
             padding: 0rem 0.5rem;
-            
-            & .button-cart__icon {
+
+            & .header-icon {
                 color: var(--white);
                 font-size: 1.8rem;
-                margin-top: 0.5rem;
                 transition: var(--color-transition);
     
                 &:hover {
                     color: var(--yellow);
+                }
+            }
+
+            &.menu-mobile {
+                display: none;
+
+                @media screen and (max-width: 945px){
+                    display: block;
                 }
             }
         }

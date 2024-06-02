@@ -13,7 +13,7 @@ export function MenuSection() {
         <h2>Os mais pedidos</h2>
       </div>
       <div className="menu-container">
-        {productsMock.slice(0, 4).map((product, i) => (
+        {productsMock.slice(0, 3).map((product, i) => (
           <ProductCard key={i} {...product} />
         ))}
       </div>

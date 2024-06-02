@@ -15,6 +15,10 @@
         align-items: center;
         gap: 5rem;
 
+        @media screen and (max-width: 990px) {
+            justify-content: center;
+        }
+
         &  .product {
             width: 23rem;
             min-height: 35rem;

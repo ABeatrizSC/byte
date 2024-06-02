@@ -21,6 +21,9 @@
 html {
     height: 100dvh;
     font-size: 62.5%;
+    @media screen and (max-width: 680px) {
+       font-size: 50%;
+    }
     font-family: var(--font);
 }
 
@@ -34,6 +37,11 @@ h1 {
     text-transform: uppercase;
     line-height: 8rem;
     letter-spacing: var(--letter-spacing);
+    min-width: max-content;
+
+    @media screen and (max-width: 1150px) {
+        font-size: 2.1rem;
+    }
 }
 
 h2 {
@@ -73,6 +81,9 @@ a {
     padding: 5rem 10rem;
     background-color: var(--black);
 
+    @media screen and (max-width: 684px) {
+        padding: 5rem;
+    }
     
     & .text-highlight {
         color: var(--yellow);
@@ -82,9 +93,13 @@ a {
 }
 
 & .title-container {
+    @media screen and (max-width: 950px) {
+        text-align: center;
+    }
+
     & h3 {
         font-family: var(--handwritten-font);
-        font-size: 18px;
+        font-size: 1.8rem;
         color: var(--yellow);
         font-weight: 400;
         text-shadow: var(--txt-shadow);

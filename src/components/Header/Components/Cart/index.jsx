@@ -35,7 +35,7 @@ export function Cart({ isCartOpened, setIsCartOpened }) {
             </div>
             {!(isEmpty) ? 
                 <div className='cart__footer'>
-                    <p className='cart-price'>R$ {(cartTotal) ? cartTotal.toFixed(2).replace('.', ',') : '00,00'}</p>
+                    <p className='cart-price'>Total: R$ {(cartTotal) ? cartTotal.toFixed(2).replace('.', ',') : '00,00'}</p>
                     <button className='button-finalize-cart' onClick={() => {navigate("/checkout"); setIsCartOpened(!isCartOpened);}}>
                         Finalizar carrinho
                     </button>

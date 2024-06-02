@@ -19,6 +19,14 @@
         overflow-x: scroll;
         scroll-behavior: smooth;
 
+        @media screen and (max-width: 978px) {
+            max-width: 40rem;
+        }
+
+        @media screen and (max-width: 597px) {
+            max-width: 30rem;
+        }
+
         &&::-webkit-scrollbar {
             display: none;
         }
@@ -35,14 +43,50 @@
         color: var(--red);
         top: 60%;
         padding: 0;
+
+        @media screen and (max-width: 363px) {
+            top: 65%;
+        }
     }
 
     & .arrow--left {
         left: 30rem;
+
+        @media screen and (max-width: 1184px) {
+            left: 20rem;
+        }
+
+        @media screen and (max-width: 978px) {
+            left: 10rem;
+        }
+
+        @media screen and (max-width: 475px) {
+            left: 3rem;
+        }
+
+        @media screen and (max-width: 363px) {
+            left: 1rem;
+        }
     }
 
     & .arrow--right {
         right: 30rem;
+
+        @media screen and (max-width: 1184px) {
+            right: 20rem;
+        }
+
+        @media screen and (max-width: 978px) {
+            right: 10rem;
+        }
+
+        @media screen and (max-width: 475px) {
+            right: 3rem;
+        }
+
+        @media screen and (max-width: 363px) {
+            right: 1rem;
+        }
     }
 
     & .button-disabled {
