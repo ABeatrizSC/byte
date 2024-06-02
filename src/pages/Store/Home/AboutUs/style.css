@@ -4,7 +4,7 @@
     flex-wrap: wrap-reverse;
     color: var(--white);
     background-image: url(../../../../assets/images/backgrounds/home_bg.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     
     & .aboutUs-section__image-container {

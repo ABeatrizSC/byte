@@ -10,6 +10,9 @@
 
     @media screen and (max-width: 942px) {
         background-image: url(../../../../assets/images/backgrounds/hero_bg--mobile.jpg);
+        position: inherit;
+        display: flex;
+        align-items: center;
     }
 
     & .hero-section__text-container {
@@ -24,9 +27,11 @@
         @media screen and (max-width: 942px) {
             max-width: 100%;
             font-size: 2.1rem;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            position: inherit;
+            text-align: center;
+            top: 0;
+            left: 0;
+            transform: translateY(0);
             text-align: center;
         }
 
@@ -60,6 +65,11 @@
 
             @media screen and (max-width: 1150px) {
                 font-size: 10rem;
+                margin-left: 0;
+            }
+
+            @media screen and (max-width: 350px) {
+                font-size: 8rem;
             }
         }
 
