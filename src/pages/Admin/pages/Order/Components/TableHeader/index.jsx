@@ -10,8 +10,6 @@ export function TableHeader() {
             <th>Cliente</th>
             <th>Endereço</th>
             <th>Contato</th>
-            <th>F. Pag</th>
-            <th>Total</th>
             <th>Itens</th>
             <th>Status</th>
         </tr>

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import { statusColors } from '../../statusColors';
 
 export function TableCell( item ) {
-  const { id, date, client, address, contact, paymentMethod, total, status } = item;
+  const { id, date, client, address, contact, status } = item;
   return (
     <>
       <td>#{id}</td>
@@ -12,8 +12,6 @@ export function TableCell( item ) {
       <td>{client}</td>
       <td>{address}</td>
       <td>{contact}</td>
-      <td>{paymentMethod}</td>
-      <td>R$ {total}</td>
       <td>
         <NavLink to="#">Exibir</NavLink>
       </td>
