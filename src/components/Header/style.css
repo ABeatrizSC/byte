@@ -44,6 +44,10 @@ header {
                 &:hover {
                     color: var(--yellow);
                 }
+
+                @media screen and (max-width: 945px){
+                    font-size: 2.1rem;
+                }
             }
 
             &.menu-mobile {
