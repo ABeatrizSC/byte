@@ -60,7 +60,7 @@ export function Sidebar({ children }) {
         </button>
       </aside>
       <main>
-        {children }
+        {children}
       </main>
     </div>
   )

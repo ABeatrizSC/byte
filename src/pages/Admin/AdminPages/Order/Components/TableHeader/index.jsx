@@ -10,7 +10,7 @@ export function TableHeader() {
             <th>Cliente</th>
             <th>Endereço</th>
             <th>Contato</th>
-            <th>Itens</th>
+            <th>Detalhes</th>
             <th>Status</th>
         </tr>
     </thead>

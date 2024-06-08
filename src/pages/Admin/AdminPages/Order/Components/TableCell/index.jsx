@@ -1,10 +1,14 @@
 import React from 'react'
 import './style.css'
-import { NavLink } from 'react-router-dom'
 import { statusColors } from '../../statusColors';
 
-export function TableCell( item ) {
-  const { id, date, client, address, contact, status } = item;
+export function TableCell( {item, onOpenOrderModal} ) {
+  const { id, date, client, address, contact, status, paymentMethod, total } = item;
+
+  function getOrderInformation() {
+    return item
+  }
+
   return (
     <>
       <td>#{id}</td>
@@ -13,7 +17,7 @@ export function TableCell( item ) {
       <td>{address}</td>
       <td>{contact}</td>
       <td>
-        <NavLink to="#">Exibir</NavLink>
+        <button onClick={() => onOpenOrderModal(item)}>Exibir</button>
       </td>
       <td className='status'>
         <span style={{backgroundColor: statusColors[status]}}>

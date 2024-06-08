@@ -1,0 +1,90 @@
+.modal-content-container {
+    min-width: 50rem;
+    margin: 1.5rem 2rem;
+    padding: 1rem;
+    text-align: center;
+
+    & h3 {
+        margin-bottom: 3rem;
+        text-transform: uppercase;
+        font-size: 2.5rem;
+    }
+
+    & .form-container {
+        width: 100%;
+        height: 100%;
+
+        & .form {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: start;
+            justify-content: space-between;
+
+            & .form__input-container {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                gap: 1rem;
+
+                & input {
+                    width: 100%;
+                    padding: 0.7rem;
+                    border-radius: 0.5rem;
+                    border: 0.1rem solid black;
+                    font-size: 1.7rem;
+                }
+            }
+
+            & button {
+                margin-top: 1rem!important;
+                background-color: var(--yellow);
+                transition: var(--bgc-transition);
+                margin: 0 auto;
+
+                &:hover {
+                    background-color: var(--yellow-hover);
+                }
+            }
+        }
+    }
+
+    & .delete-modal-container {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        align-items: center;
+
+        & .delete-modal-container__message {
+            font-size: 1.8rem;
+        }
+
+        & .delete-modal-container__button {
+            background-color: var(--red);
+
+            &:hover {
+                background-color: var(--red-hover);
+            }
+        }
+    }
+
+    & .order-modal-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+
+        & .order-information {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+            
+            & .order-information__title {
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

@@ -3,7 +3,7 @@ import './style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit ,faTrash } from '@fortawesome/free-solid-svg-icons'
 
-export function Item( item ) {
+export function Item( {item, onOpenDeleteModal, onOpenChangeProductModal} ) {
     const { name, price, description, image } = item;
     const alt = `Imagem do produto ${name}`;
 
@@ -20,10 +20,10 @@ export function Item( item ) {
                 </div>
             </div>
             <div className='item-actions-container'>
-                <button className='item-actions-container__edit-button'>
+                <button className='item-actions-container__edit-button' onClick={onOpenChangeProductModal}>
                     <FontAwesomeIcon className='icon' icon={faEdit} />
                 </button>
-                <button className='item-actions-container__trash-button'>
+                <button className='item-actions-container__trash-button' onClick={onOpenDeleteModal}>
                     <FontAwesomeIcon className='icon' icon={faTrash} />
                 </button>
             </div>
