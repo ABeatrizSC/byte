@@ -4,6 +4,7 @@ import { Item } from '../Item'
 import { SearchFilter } from '../SearchFilter'
 
 export function ManagementSection( { title, filterPlaceholder, subtitle, itemList, onOpenProductModal, onOpenChangeProductModal, onOpenDeleteModal } ) {
+
     return (
     <section className='management-section'>
         <h1 className='management-section__title'>{title}</h1>

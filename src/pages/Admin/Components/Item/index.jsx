@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit ,faTrash } from '@fortawesome/free-solid-svg-icons'
 
 export function Item( {item, onOpenDeleteModal, onOpenChangeProductModal} ) {
-    const { name, price, description, image } = item;
+    const { name, price, description, image, category_id } = item;
     const alt = `Imagem do produto ${name}`;
 
     return (
@@ -23,7 +23,7 @@ export function Item( {item, onOpenDeleteModal, onOpenChangeProductModal} ) {
                 <button className='item-actions-container__edit-button' onClick={onOpenChangeProductModal}>
                     <FontAwesomeIcon className='icon' icon={faEdit} />
                 </button>
-                <button className='item-actions-container__trash-button' onClick={onOpenDeleteModal}>
+                <button className='item-actions-container__trash-button' onClick={() => onOpenDeleteModal(category_id)}>
                     <FontAwesomeIcon className='icon' icon={faTrash} />
                 </button>
             </div>

@@ -1,12 +1,13 @@
-import React, {useState} from 'react'
+import React, {useCallback, useEffect, useState} from 'react'
 import { ManagementSection } from '../../Components/ManagementSection'
-import { productsMock } from '../../../../components/ProductCard/productsMock'
 import { CustomModal } from '../../../../components/CustomModal'
+import { getAllProducts } from '../../../../utils/services';
 
 export  function Products() {
   const [openProductModal, setOpenProductModal] = useState(false);
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
   const [openChangeProductModal, setOpenChangeProductModal] = useState(false);
+  const [products, setProducts] = useState([]);
 
   const onOpenProductModal = () => setOpenProductModal(true);
   const onCloseProductModal = () => setOpenProductModal(false);
@@ -14,13 +15,23 @@ export  function Products() {
   const onCloseDeleteModal = () => setOpenDeleteModal(false);
   const onOpenChangeProductModal = () => setOpenChangeProductModal(true);
   const onCloseChangeProductModal = () => setOpenChangeProductModal(false);
-  return (
+
+  const getData = useCallback( async() => {
+    const response = await getAllProducts();
+    setProducts(response);
+  }, []);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  return products.length && (
     <>
       <ManagementSection 
         title="Produtos" 
         subtitle="Produtos cadastrados"
         filterPlaceholder="Nome do produto"
-        itemList={productsMock}
+        itemList={products}
         onOpenProductModal={onOpenProductModal}
         onOpenDeleteModal={onOpenDeleteModal}
         onOpenChangeProductModal={onOpenChangeProductModal}

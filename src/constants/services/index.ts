@@ -1,2 +1,3 @@
-export const HOST = "http://byte-env.eba-6vgh9twk.sa-east-1.elasticbeanstalk.com";
+export const HOST = "https://7360-177-47-86-144.ngrok-free.app";
 export const ROUTES_PRODUCT = "/product";
+export const ROUTES_CATEGORY = "/product-category";

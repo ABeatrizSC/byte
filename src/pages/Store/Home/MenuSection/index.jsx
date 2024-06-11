@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 
 export function MenuSection() {
   const navigate = useNavigate();
-  const [products, setProducts] = useState();
+  const [products, setProducts] = useState([]);
 
   const getData = useCallback( async() => {
     const response = await getAllProducts();
@@ -17,7 +17,7 @@ export function MenuSection() {
     getData();
   }, []);
 
-  return products && (
+  return products.length && (
     <section className="home-section menu-section" id="menu">
       <div className="title-container menu-section__title">
         <h3>Experimente já</h3>
