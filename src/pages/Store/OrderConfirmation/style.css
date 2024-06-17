@@ -9,10 +9,20 @@
     flex-direction: column;
     gap: 4rem;
     align-items: center;
+    border-bottom: 0.1rem solid #fff;
+    border-top: 0.1rem solid #fff;
+
+    @media screen and (max-width: 684px) {
+        padding: 3rem;
+    }
 
     & .shippIcon {
         font-size: 10rem;
         color: var(--yellow);
+
+        @media screen and (max-width: 684px) {
+            font-size: 8rem;
+        }
     }
     
     & .text-container {

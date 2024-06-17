@@ -74,6 +74,10 @@ header {
             display: flex;
             align-items: center;
             justify-content: center;
+
+            @media screen and (max-width: 945px) {
+                right: 4.5rem;
+            }
         }
     }
 }
