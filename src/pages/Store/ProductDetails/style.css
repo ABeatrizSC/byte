@@ -1,5 +1,5 @@
 .productDetails-section {
-    padding: 5rem 10rem;
+    padding: var(--padding-section);
     color: var(--white);
     background-color: var(--black);
     display: flex;

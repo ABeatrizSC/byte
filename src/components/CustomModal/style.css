@@ -10,6 +10,10 @@
         font-size: 2.5rem;
     }
 
+    p {
+        margin-bottom: 3rem;
+    }
+
     & .form-container {
         width: 100%;
         height: 100%;
@@ -76,15 +80,35 @@
         align-items: flex-start;
 
         & .order-information {
+            width: 100%;
             display: flex;
-            flex-direction: column;
             align-items: flex-start;
             gap: 0.5rem;
+
+            &.checkout {
+                gap: 3rem;
+            }
             
             & .order-information__title {
                 font-weight: bold;
                 text-transform: uppercase;
+                margin-right: 1rem;
+            }
+
+            & .order-information--group {
+               
+                background-color: #ff0000;
             }
         }
+    }
+
+    & .button-sent-order {
+        background-color: var(--yellow);
+        margin-left: 3rem;
+        margin-top: 3rem;
+    }
+
+    & .button-change-informations {
+        background-color: var(--red);
     }
 }

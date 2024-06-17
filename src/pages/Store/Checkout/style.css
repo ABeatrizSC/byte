@@ -1,6 +1,6 @@
 .section-checkout {
     background-color: var(--black);
-    padding: 5rem 10rem;
+    padding: var(--padding-section);
     min-height: 70vh;
 
     & h2 {

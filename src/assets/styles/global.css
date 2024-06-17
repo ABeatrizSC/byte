@@ -12,6 +12,7 @@
     --color-transition: color 400ms ease-in-out;
     --bgc-transition: background-color 400ms ease-in-out;
     --txt-shadow: 0.1rem 0.3rem 0.9rem rgba(0,0,0,0.6);
+    --padding-section: 5rem 10rem;
 }
 
 * {
@@ -82,7 +83,7 @@ a {
 .home-section {
     width: 100%;
     text-shadow: var(--txt-shadow);
-    padding: 5rem 10rem;
+    padding: var(--padding-section);
     background-color: var(--black);
 
     @media screen and (max-width: 684px) {
