@@ -26,6 +26,7 @@ header {
     & .links-container {
         display: flex;
         gap: 2rem;
+        position: relative;
 
         & .nav-header-container {
             @media screen and (max-width: 945px){
@@ -57,6 +58,22 @@ header {
                     display: block;
                 }
             }
+        }
+
+        & div.cart-quantity {
+            font-size: 1.2rem;
+            font-weight: bolder;
+            color: var(--black);
+            position: absolute;
+            top: -40%;
+            right: -0.6rem;
+            min-width: 2rem;
+            min-height: 2rem;
+            border-radius: 50%;
+            background-color: var(--yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 }

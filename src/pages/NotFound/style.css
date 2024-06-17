@@ -1,7 +1,7 @@
 .not-found-section {
     min-height: 80vh;
     height: 100vh;
-    padding: 5rem 10rem;
+    padding: var(--padding-section);
     background-color: #000000;
     color: var(--white);
     text-align: center;
