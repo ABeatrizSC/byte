@@ -1,0 +1,14 @@
+.analytics-section {
+    text-align: center;
+    & .charts-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & .charts-group {
+            display: flex;
+            gap: 3rem;
+        }
+    }
+}
