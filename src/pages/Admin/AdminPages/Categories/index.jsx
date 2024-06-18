@@ -1,29 +1,19 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import './style.css'
-import { ManagementSection } from '../../Components/ManagementSection'
-import { CustomModal } from '../../../../components/CustomModal'
-import useService from '../../../../hooks/useService'
+import { useCallback, useEffect, useState } from "react";
+import "./style.css";
+import { ManagementSection } from "../../Components/ManagementSection";
+import useService from "../../../../hooks/useService";
+import { CreateModal, DeleteModal, EditModal } from "./components";
 
-export  function Categories() {
-  const { createCategory, deleteCategory, editCategory, getAllCategories } = useService();
-  const [openProductModal, setOpenProductModal] = useState(false);
-  const [openDeleteModal, setOpenDeleteModal] = useState(false);
-  const [openChangeProductModal, setOpenChangeProductModal] = useState(false);
+export function Categories() {
+  const { getAllCategories } = useService();
+  const [isCreateOpen, setCreateOpen] = useState(false);
+  const [isDeleteOpen, setDeleteOpen] = useState(false);
+  const [isEditOpen, setEditOpen] = useState(false);
   const [categories, setCategories] = useState([]);
-  const [categoryName, setCategoryName] = useState("");
   const [id, setId] = useState("");
+  const [category, setCategory] = useState("");
 
-  const onOpenProductModal = () => setOpenProductModal(true);
-  const onCloseProductModal = () => setOpenProductModal(false);
-  const onOpenDeleteModal = (id) => {
-    setOpenDeleteModal(true);
-    setId(id);
-  };
-  const onCloseDeleteModal = () => setOpenDeleteModal(false);
-  const onOpenChangeProductModal = () => setOpenChangeProductModal(true);
-  const onCloseChangeProductModal = () => setOpenChangeProductModal(false);
-
-  const getData = useCallback( async() => {
+  const getData = useCallback(async () => {
     const response = await getAllCategories();
     setCategories(response);
   }, []);
@@ -32,88 +22,42 @@ export  function Categories() {
     getData();
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (categoryName !== "") {
-      createCategory({name: categoryName, internal: false, active: true})
-    }
-  }
+  const handleCreateCategory = () => {
+    setCreateOpen(true);
+  };
 
-  const handleDelete = (e) => {
-    e.preventDefault();
-    if (id !== "") {
-      deleteCategory(id);
-    }
-  }
+  const handleDeleteCategory = (id) => {
+    setDeleteOpen(true);
+    setId(id);
+  };
 
-  const handleEdit = (e) => {
-    e.preventDefault();
-    if (id !== "") {
-      editCategory(id, {name: categoryName, active: true, internal: false});
-    }
-  }
+  const handleEditCategory = (id, category) => {
+    setCategory(category);
+    setEditOpen(true);
+    setId(id);
+  };
 
-  return categories.length && (
-    <>
-      <ManagementSection 
-        title="Categorias" 
-        subtitle="Categorias cadastradas" filterPlaceholder="Nome da categoria" 
-        itemList={categories}
-        onOpenProductModal={onOpenProductModal}
-        onOpenDeleteModal={onOpenDeleteModal}
-        onOpenChangeProductModal={onOpenChangeProductModal}
-      />
-      <CustomModal open={openProductModal} onCloseModal={onCloseProductModal}>
-        <div className='modal-content-container'>
-          <h3>Criar nova categoria</h3>
-          <div className='form-container'>
-            <form action="" className='form'>
-              <div className='form__input-container'>
-                <label htmlFor="new-product-name">Nome da categoria</label>
-                <input 
-                  type="text" 
-                  id='new-product-name' 
-                  name='new-product-name' 
-                  required 
-                  onChange={(e) => setCategoryName(e.target.value)}
-                  value={categoryName}
-                />
-              </div>
-              <button onClick={handleSubmit}>Adicionar</button>
-            </form>
-          </div>
-        </div>
-      </CustomModal>
-      <CustomModal open={openDeleteModal} onCloseModal={onCloseDeleteModal}>
-        <div className='modal-content-container'>
-          <h3>Tem certeza que deseja excluir esta categoria?</h3>
-          <div className='delete-modal-container'>
-            <p className='delete-modal-container__message'>Esta ação não poderá ser desfeita.</p>
-            <button className='delete-modal-container__button' onClick={handleDelete}>Excluir permanentemente</button>
-          </div>
-        </div>
-      </CustomModal>
-      <CustomModal open={openChangeProductModal} onCloseModal={onCloseChangeProductModal}>
-        <div className='modal-content-container'>
-          <h3>Alterar categoria</h3>
-          <div className='form-container'>
-            <form action="" className='form'>
-              <div className='form__input-container'>
-                <label htmlFor="new-category-name">Nome da categoria:</label>
-                <input 
-                  type="text" 
-                  id='new-category-name' 
-                  name='new-category-name' 
-                  required 
-                  onChange={(e) => setCategoryName(e.target.value)} 
-                  value={categoryName} 
-                />
-              </div>
-              <button onClick={handleEdit}>Alterar</button>
-            </form>
-          </div>
-        </div>
-      </CustomModal>
-    </>
-  )
+  return (
+    categories.length && (
+      <>
+        <ManagementSection
+          title="Categorias"
+          subtitle="Categorias cadastradas"
+          filterPlaceholder="Nome da categoria"
+          itemList={categories}
+          onOpenProductModal={handleCreateCategory}
+          onOpenDeleteModal={handleDeleteCategory}
+          onOpenChangeProductModal={handleEditCategory}
+        />
+        <CreateModal isOpen={isCreateOpen} setOpen={setCreateOpen} />
+        <DeleteModal isOpen={isDeleteOpen} setOpen={setDeleteOpen} id={id} />
+        <EditModal
+          isOpen={isEditOpen}
+          setOpen={setEditOpen}
+          id={id}
+          item={category}
+        />
+      </>
+    )
+  );
 }

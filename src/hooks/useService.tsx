@@ -2,11 +2,24 @@ import { useContext } from "react";
 import {
   HOST,
   ROUTES_CATEGORY,
+  ROUTES_GRAPH,
   ROUTES_LOGIN,
+  ROUTES_ORDER,
+  ROUTES_PAYMENT_METHOD,
   ROUTES_PRODUCT,
+  ROUTES_TOP_SELLING,
 } from "../constants/services";
 import TokenContext from "../contexts/TokenContext";
 import { getAuthCookie, updateAuthCookie } from "../utils/cookie";
+import {
+  IAllOrders,
+  ICreateCategory,
+  ICreateProduct,
+  IEditCategory,
+  IEditProduct,
+  IGetProductById,
+  IOrderById,
+} from "../types/requests";
 
 const useService = () => {
   const { setToken, token } = useContext(TokenContext);
@@ -31,6 +44,14 @@ const useService = () => {
     return response.json();
   };
 
+  const getProductById: IGetProductById = async (id) => {
+    const response = await fetch(HOST + ROUTES_PRODUCT, {
+      mode: "cors",
+      headers: getHeaders(),
+    });
+    return response.json();
+  };
+
   const getAllCategories = async () => {
     const response = await fetch(HOST + ROUTES_CATEGORY, {
       mode: "cors",
@@ -39,56 +60,6 @@ const useService = () => {
     return response.json();
   };
 
-  /* CATEGORY INTERFACES */
-  interface ICreateCategory {
-    ({ name }: { name: string }): void;
-  }
-
-  interface IEditCategory {
-    (id: string, { name }: { name: string }): void;
-  }
-
-  /* PRODUCTS INTERFACES */
-  interface ICreateProduct {
-    ({
-      name,
-      category_id,
-      price,
-      image,
-      description,
-      rank,
-    }: {
-      name: string;
-      category_id: string;
-      price: string;
-      image: string;
-      description: string;
-      rank: string;
-    }): Promise<Response>;
-  }
-  interface IEditProduct {
-    (
-      id: string,
-      {
-        name,
-        category_id,
-        price,
-        image,
-        description,
-        rank,
-      }: {
-        name: string;
-        category_id: string;
-        price: string;
-        image: string;
-        description: string;
-        rank: string;
-      }
-    ): Promise<Response>;
-  }
-
-  /* CATEGORY FUNCTIONS */
-  /* CREATE CATEGORY */
   const createCategory: ICreateCategory = async (props) => {
     const response = await fetch(HOST + ROUTES_CATEGORY, {
       mode: "cors",
@@ -99,7 +70,6 @@ const useService = () => {
     return response;
   };
 
-  /* EDIT CATEGORY */
   const editCategory: IEditCategory = async (id, props) => {
     const response = await fetch(`${HOST}${ROUTES_CATEGORY}/${id}`, {
       mode: "cors",
@@ -110,7 +80,6 @@ const useService = () => {
     return response;
   };
 
-  /* DELETE CATEGORY */
   const deleteCategory = async (id: string) => {
     const response = await fetch(`${HOST}${ROUTES_CATEGORY}/${id}`, {
       mode: "cors",
@@ -120,8 +89,6 @@ const useService = () => {
     return response;
   };
 
-  /* PRODUCT FUNCTIONS */
-  /* CREATE PRODUCT */
   const createProduct: ICreateProduct = async (props) => {
     const response = await fetch(HOST + ROUTES_PRODUCT, {
       mode: "cors",
@@ -132,7 +99,6 @@ const useService = () => {
     return response;
   };
 
-  /* EDIT PRODUCT*/
   const editProduct: IEditProduct = async (id, props) => {
     const response = await fetch(`${HOST}${ROUTES_PRODUCT}/${id}`, {
       mode: "cors",
@@ -143,7 +109,6 @@ const useService = () => {
     return response;
   };
 
-  /* DELETE PRODUCT*/
   const deleteProduct = async (id: string) => {
     const response = await fetch(`${HOST}${ROUTES_PRODUCT}/${id}`, {
       mode: "cors",
@@ -153,7 +118,44 @@ const useService = () => {
     return response;
   };
 
-  /* LOGIN */
+  const getAllOrders: IAllOrders = async () => {
+    const response = await fetch(`${HOST}${ROUTES_ORDER}`, {
+      mode: "cors",
+      headers: getHeaders(),
+    });
+    return response.json();
+  };
+
+  const getOrderById: IOrderById = async (id) => {
+    const response = await fetch(`${HOST}${ROUTES_ORDER}/${id}`, {
+      mode: "cors",
+      headers: getHeaders(),
+    });
+    return response;
+  };
+
+  const getGraphTopSellingProducts = async () => {
+    const response = await fetch(
+      `${HOST}${ROUTES_GRAPH}${ROUTES_TOP_SELLING}${ROUTES_PRODUCT}`,
+      {
+        mode: "cors",
+        headers: getHeaders(),
+      }
+    );
+    return response;
+  };
+
+  const getGraphTopSellingPaymentMethods = async () => {
+    const response = await fetch(
+      `${HOST}${ROUTES_GRAPH}${ROUTES_TOP_SELLING}${ROUTES_PAYMENT_METHOD}`,
+      {
+        mode: "cors",
+        headers: getHeaders(),
+      }
+    );
+    return response;
+  };
+
   const login = async (props) => {
     const response = await fetch(`${HOST}${ROUTES_LOGIN}`, {
       mode: "cors",
@@ -178,6 +180,11 @@ const useService = () => {
     createProduct,
     editProduct,
     deleteProduct,
+    getAllOrders,
+    getOrderById,
+    getProductById,
+    getGraphTopSellingProducts,
+    getGraphTopSellingPaymentMethods,
     login,
   };
 };

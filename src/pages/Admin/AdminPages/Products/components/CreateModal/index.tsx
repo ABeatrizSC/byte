@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { CustomModal } from "../../../../../components/CustomModal";
-import useService from "../../../../../hooks/useService";
+import { CustomModal } from "../../../../../../components/CustomModal";
+import useService from "../../../../../../hooks/useService";
 
 interface CreateModalProps {
   openProductModal: boolean;
@@ -8,7 +8,7 @@ interface CreateModalProps {
   onCloseProductModal: () => void;
 }
 
-export const CreateModal: React.FC<CreateModalProps> = (props) => {
+const CreateModal: React.FC<CreateModalProps> = (props) => {
   const { createProduct } = useService();
   const { openProductModal, onCloseProductModal, setOpenProductModal } = props;
 
@@ -139,3 +139,5 @@ export const CreateModal: React.FC<CreateModalProps> = (props) => {
     </CustomModal>
   );
 };
+
+export default CreateModal;
