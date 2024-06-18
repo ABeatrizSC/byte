@@ -16,7 +16,7 @@ const useService = () => {
   const getHeaders = () => {
     const headers = new Headers();
     headers.append("Content-Type", "application/json");
-    headers.append("ngrok-skip-browser-warning", "skip-browser-warning");
+    headers.append("ngrok-skip-browser-warning", "true");
     headers.append("Accept", "application/json");
     headers.append("Authorization", `Bearer ${token}`);
 
