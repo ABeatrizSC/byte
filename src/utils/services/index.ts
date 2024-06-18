@@ -1,4 +1,4 @@
-import { HOST, ROUTES_CATEGORY, ROUTES_PRODUCT } from "../../constants/services"
+import { HOST, ROUTES_CATEGORY, ROUTES_LOGIN, ROUTES_PRODUCT } from "../../constants/services"
 
 const getHeaders = () => {
     const headers = new Headers();
@@ -36,5 +36,15 @@ export const editCategory: IEditCategory = async (id, props) => {
 
 export const deleteCategory = async (id: string) => {
     const response = await fetch(`${HOST}${ROUTES_CATEGORY}/${id}`, { mode: "cors", headers: getHeaders(), method: "DELETE" });
+    return response;
+}
+
+export const login = async (props) => {
+    const response = await fetch(`${HOST}${ROUTES_LOGIN}`, { mode: "cors", headers: getHeaders(), method: "POST", body: JSON.stringify(props) });
+    if (response.ok) {
+        const result = await response.json();
+        result.ok = true; 
+        return result;
+    }
     return response;
 }
