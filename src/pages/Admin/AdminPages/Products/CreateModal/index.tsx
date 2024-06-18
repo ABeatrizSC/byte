@@ -79,7 +79,7 @@ export const CreateModal: React.FC<CreateModalProps> = (props) => {
             <div className="form__input-container">
               <label htmlFor="new-product-category">Categoria:</label>
               <input
-                type="number"
+                type="text"
                 id="new-product-category"
                 name="new-product-category"
                 required

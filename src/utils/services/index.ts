@@ -1,4 +1,4 @@
-import { HOST, ROUTES_CATEGORY, ROUTES_LOGIN, ROUTES_PRODUCT } from "../../constants/services"
+import { HOST, ROUTES_CATEGORY, ROUTES_LOGIN, ROUTES_PRODUCT, ROUTES_ORDER } from "../../constants/services"
 
 const getHeaders = () => {
     const headers = new Headers();

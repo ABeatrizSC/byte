@@ -1,11 +1,11 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import './style.css'
 import { ManagementSection } from '../../Components/ManagementSection'
-import { categoriesMock } from './categoriesMock'
 import { CustomModal } from '../../../../components/CustomModal'
-import { createCategory, deleteCategory, editCategory, getAllCategories } from '../../../../utils/services'
+import useService from '../../../../hooks/useService'
 
 export  function Categories() {
+  const { createCategory, deleteCategory, editCategory, getAllCategories } = useService();
   const [openProductModal, setOpenProductModal] = useState(false);
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
   const [openChangeProductModal, setOpenChangeProductModal] = useState(false);
@@ -17,7 +17,6 @@ export  function Categories() {
   const onCloseProductModal = () => setOpenProductModal(false);
   const onOpenDeleteModal = (id) => {
     setOpenDeleteModal(true);
-    console.log(id)
     setId(id);
   };
   const onCloseDeleteModal = () => setOpenDeleteModal(false);
@@ -100,11 +99,11 @@ export  function Categories() {
           <div className='form-container'>
             <form action="" className='form'>
               <div className='form__input-container'>
-                <label htmlFor="new-product-name">Nome da categoria:</label>
+                <label htmlFor="new-category-name">Nome da categoria:</label>
                 <input 
                   type="text" 
-                  id='new-product-name' 
-                  name='new-product-name' 
+                  id='new-category-name' 
+                  name='new-category-name' 
                   required 
                   onChange={(e) => setCategoryName(e.target.value)} 
                   value={categoryName} 

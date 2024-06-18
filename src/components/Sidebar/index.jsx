@@ -76,7 +76,6 @@ export function Sidebar({ children }) {
           <FontAwesomeIcon className="icon" icon={faRightFromBracket} />
           {isSidebarOpened ? "Sair" : ""}
         </button>
-        <p>Token: {token}</p>
       </aside>
       <main>{children}</main>
     </div>

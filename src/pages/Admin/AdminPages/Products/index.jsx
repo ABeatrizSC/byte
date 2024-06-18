@@ -1,11 +1,11 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { ManagementSection } from "../../Components/ManagementSection";
 import { CustomModal } from "../../../../components/CustomModal";
-import { getAllProducts } from "../../../../utils/services";
 import useService from "../../../../hooks/useService";
 import { CreateModal } from "./CreateModal";
 
 export function Products() {
+  const { createProduct, deleteProduct, editProduct, getAllProducts } = useService();
   const [openProductModal, setOpenProductModal] = useState(false);
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
   const [openChangeProductModal, setOpenChangeProductModal] = useState(false);

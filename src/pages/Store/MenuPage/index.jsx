@@ -1,7 +1,8 @@
-import "./style.css";
+import { useCallback, useEffect, useState } from "react";
+import useService from "../../../hooks/useService";
 import "swiper/css";
+import "./style.css";
 import ProductCard from "../../../components/ProductCard";
-import { productsMock } from "../../../components/ProductCard/productsMock";
 import BannerCarousel from "./BannerCarousel";
 import BannerSlide from "./BannerSlide";
 import combosBanner from "../../../assets/images/banners/combos_banner.jpg";
@@ -10,6 +11,18 @@ import diaHamburguerBanner from "../../../assets/images/banners/dia-hamburguer_b
 import trojanBanner from "../../../assets/images/banners/trojan-burguer_banner.jpg";
 
 export function MenuPage() {
+  const { getAllProducts } = useService();
+  const [products, setProducts] = useState([]);
+
+  const getData = useCallback(async () => {
+    const response = await getAllProducts();
+    setProducts(response);
+  }, []);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <section className="menu-page-section">
       <BannerCarousel>
@@ -45,7 +58,7 @@ export function MenuPage() {
         </div>
       </div>
       <div className="menu-page-section__menu-container">
-        {productsMock.map((product, i) => (
+        {products.map((product, i) => (
           <ProductCard key={i} {...product} />
         ))}
       </div>
