@@ -5,6 +5,7 @@ export interface Product {
   image: string;
   category_id: string;
   rank: string;
+  id_product: string;
 }
 
 export interface DetailedProduct extends Product {
