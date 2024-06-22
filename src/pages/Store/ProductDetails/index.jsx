@@ -1,31 +1,53 @@
-import React from "react";
 import "./style.css";
-import gameOver from "./gameOverDetails.png";
 import containerBg from "../../../assets/images/backgrounds/productDetails_bg.png";
 import { useParams } from "react-router-dom";
-import { productsMock } from "../../../components/ProductCard/productsMock";
+
 import { AddCartButton } from "../../../components/addCartButton";
+import { useCallback, useEffect, useState } from "react";
+import useService from "../../../hooks/useService";
 
 export function ProductDetails() {
   const { id } = useParams();
-  const productSelected = productsMock.filter( product => product.id == id)[0];
-  const alt = `imagem promocional do lanche ${productSelected.name}`;
+  const [product, setProduct] = useState();
+
+  const { getProductById } = useService(id);
+
+  const getData = useCallback(async () => {
+    const response = await getProductById(id);
+    setProduct(response);
+  }, []);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  if (!product) return <></>;
+
+  const { name, description, price, image } = product;
 
   return (
     <section className="productDetails-section">
       <div className="product-image-container">
-        <img className="product-bg-img" src={containerBg} alt="Fundo que simula uma mostarda esparramad" />
-        <img className="product-img" src={gameOver} alt={alt} />
+        <img
+          className="product-bg-img"
+          src={containerBg}
+          alt="Fundo ilustrando uma mostarda esparramada"
+        />
+        <img
+          className="product-img"
+          src={image}
+          alt={`imagem promocional do produto: ${name}`}
+        />
       </div>
       <div className="product-information-container">
         <div className="title-container productDetails-title">
-          <h3>{productSelected.name}</h3>
-          <h2>{productSelected.name}</h2>
+          <h3>{name}</h3>
+          <h2>{name}</h2>
         </div>
-        <span className="ingredients-span">Ingredientes:</span>
-        <p>{productSelected.description}</p>
-        <span className="price-span">R$ {productSelected.price}</span>
-        <AddCartButton props={productSelected} text/>
+        <span className="ingredients-span">Descrição:</span>
+        <p>{description}</p>
+        <span className="price-span">R$ {price}</span>
+        <AddCartButton props={product} text />
       </div>
     </section>
   );

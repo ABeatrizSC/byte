@@ -1,7 +1,16 @@
-import { Category, Product } from "../models";
+import { FormatedFormData } from "../../pages/Store/Checkout/utils";
+import { Category, Product, RequestCategory, RequestClient } from "../models";
 
 export interface ICreateCategory {
-  (category: Category): Promise<Response>;
+  (category: RequestCategory): Promise<Response>;
+}
+
+export interface ICreateUser {
+  (category: RequestClient): Promise<Response>;
+}
+
+export interface ICreateOrder {
+  (category: FormatedFormData): Promise<Response>;
 }
 
 export interface IEditCategory {
@@ -25,4 +34,8 @@ export interface IOrderById {
 
 export interface IGetProductById {
   (id: string): Promise<Response>;
+}
+
+export interface IAllPaymentMethods {
+  (): Promise<Response>;
 }

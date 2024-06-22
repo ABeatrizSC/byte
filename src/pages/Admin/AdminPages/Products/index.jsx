@@ -2,6 +2,7 @@ import { ManagementSection } from "../../Components/ManagementSection";
 import { useCallback, useEffect, useState } from "react";
 import useService from "../../../../hooks/useService";
 import { CreateModal, DeleteModal, EditModal } from "./components";
+import { useDebounce } from "use-debounce";
 
 export function Products() {
   const { getAllProducts } = useService();
@@ -12,6 +13,9 @@ export function Products() {
 
   const [productId, setProductId] = useState("");
   const [currentProduct, setCurrentProduct] = useState();
+
+  const [filter, setFilter] = useState("");
+  const [debouncedFilter] = useDebounce(filter, 1500);
 
   const onOpenProductModal = () => setOpenProductModal(true);
   const onCloseProductModal = () => setOpenProductModal(false);
@@ -29,43 +33,45 @@ export function Products() {
   };
 
   const getData = useCallback(async () => {
-    const response = await getAllProducts();
+    const params = new URLSearchParams({ search: debouncedFilter });
+
+    const response = await getAllProducts(params);
     setProducts(response);
-  }, []);
+  }, [debouncedFilter]);
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [debouncedFilter]);
 
   return (
-    products.length && (
-      <>
-        <ManagementSection
-          title="Produtos"
-          subtitle="Produtos cadastrados"
-          filterPlaceholder="Nome do produto"
-          itemList={products}
-          onOpenProductModal={onOpenProductModal}
-          onOpenDeleteModal={handleDeleteProduct}
-          onOpenChangeProductModal={handleEditProduct}
-        />
-        <CreateModal
-          openProductModal={openProductModal}
-          setOpenProductModal={setOpenProductModal}
-          onCloseProductModal={onCloseProductModal}
-        />
-        <DeleteModal
-          isOpen={openDeleteModal}
-          setOpen={onCloseDeleteModal}
-          id={productId}
-        />
-        <EditModal
-          isOpen={openChangeProductModal}
-          setOpen={setOpenChangeProductModal}
-          item={currentProduct}
-          id={productId}
-        />
-      </>
-    )
+    <>
+      <ManagementSection
+        title="Produtos"
+        subtitle="Produtos cadastrados"
+        filterPlaceholder="Nome do produto"
+        filter={filter}
+        setFilter={setFilter}
+        itemList={products}
+        onOpenProductModal={onOpenProductModal}
+        onOpenDeleteModal={handleDeleteProduct}
+        onOpenChangeProductModal={handleEditProduct}
+      />
+      <CreateModal
+        openProductModal={openProductModal}
+        setOpenProductModal={setOpenProductModal}
+        onCloseProductModal={onCloseProductModal}
+      />
+      <DeleteModal
+        isOpen={openDeleteModal}
+        setOpen={onCloseDeleteModal}
+        id={productId}
+      />
+      <EditModal
+        isOpen={openChangeProductModal}
+        setOpen={setOpenChangeProductModal}
+        item={currentProduct}
+        id={productId}
+      />
+    </>
   );
 }

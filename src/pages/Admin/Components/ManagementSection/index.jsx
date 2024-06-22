@@ -5,6 +5,8 @@ import { SearchFilter } from "../SearchFilter";
 export function ManagementSection({
   title,
   filterPlaceholder,
+  filter,
+  setFilter,
   subtitle,
   itemList,
   onOpenProductModal,
@@ -15,7 +17,11 @@ export function ManagementSection({
     <section className="management-section">
       <h1 className="management-section__title">{title}</h1>
       <div className="management-section__controls-container">
-        <SearchFilter filterPlaceholder={filterPlaceholder} />
+        <SearchFilter
+          filterPlaceholder={filterPlaceholder}
+          filter={filter}
+          setFilter={setFilter}
+        />
         <button
           className="controls-container__add-product-button"
           onClick={onOpenProductModal}
@@ -26,7 +32,7 @@ export function ManagementSection({
       <div className="management-section__products-list-container">
         <h2>{subtitle}:</h2>
         <ul>
-          {itemList.map((item, index) => (
+          {itemList?.map((item, index) => (
             <li key={index}>
               <Item
                 item={item}

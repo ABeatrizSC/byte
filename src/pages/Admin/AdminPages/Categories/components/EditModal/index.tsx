@@ -14,8 +14,6 @@ const EditModal: React.FC<EditModalProps> = (props) => {
   const { editCategory } = useService();
   const { isOpen, setOpen, item, id } = props;
 
-  console.log("id:", id);
-
   const [name, setName] = useState("");
 
   const [wrong, setWrong] = useState(false);

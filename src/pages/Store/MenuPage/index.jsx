@@ -9,19 +9,39 @@ import combosBanner from "../../../assets/images/banners/combos_banner.jpg";
 import dataDinnerBanner from "../../../assets/images/banners/data-dinner_banner.jpg";
 import diaHamburguerBanner from "../../../assets/images/banners/dia-hamburguer_banner.jpg";
 import trojanBanner from "../../../assets/images/banners/trojan-burguer_banner.jpg";
+import CategoryRadio from "./CategoryRadio";
 
 export function MenuPage() {
-  const { getAllProducts } = useService();
+  const { getAllProducts, getAllCategories } = useService();
   const [products, setProducts] = useState([]);
+  const [categoryFilter, setCategoryFilter] = useState();
+  const [categories, setCategories] = useState();
 
-  const getData = useCallback(async () => {
-    const response = await getAllProducts();
+  const getProducts = useCallback(async () => {
+    const formatedCategory = categoryFilter === "all" ? null : categoryFilter;
+    const params = new URLSearchParams(
+      formatedCategory && { category_id: categoryFilter }
+    );
+
+    const response = await getAllProducts(params);
     setProducts(response);
+  }, [categoryFilter]);
+
+  const getCategories = useCallback(async () => {
+    if (categories) return;
+
+    const response = await getAllCategories();
+    setCategories(response);
   }, []);
 
   useEffect(() => {
-    getData();
-  }, []);
+    getProducts();
+    getCategories();
+  }, [categoryFilter]);
+
+  const handleCategoryChange = (e) => {
+    setCategoryFilter(e.target.value);
+  };
 
   return (
     <section className="menu-page-section">
@@ -37,25 +57,24 @@ export function MenuPage() {
       </div>
       <div className="menu-page-section__filters-container">
         <div className="radio-filter-container">
-          <input type="radio" name="filter" id="all" value="all" />
+          <input
+            type="radio"
+            name="filter"
+            id="all"
+            value="all"
+            checked={categoryFilter === "all"}
+            onChange={handleCategoryChange}
+          />
           <label htmlFor="all">Todos</label>
         </div>
-        <div className="radio-filter-container">
-          <input type="radio" name="filter" id="burger" value="burger" />
-          <label htmlFor="burger">Lanches</label>
-        </div>
-        <div className="radio-filter-container">
-          <input type="radio" name="filter" id="combos" value="combos" />
-          <label htmlFor="combos">Combos</label>
-        </div>
-        <div className="radio-filter-container">
-          <input type="radio" name="filter" id="drinks" value="drinks" />
-          <label htmlFor="drinks">Bebidas</label>
-        </div>
-        <div className="radio-filter-container">
-          <input type="radio" name="filter" id="desserts" value="desserts" />
-          <label htmlFor="desserts">Sobremesas</label>
-        </div>
+        {categories?.map((category) => (
+          <CategoryRadio
+            {...category}
+            key={category.category_id}
+            handleSelect={handleCategoryChange}
+            selectedCategory={categoryFilter}
+          />
+        ))}
       </div>
       <div className="menu-page-section__menu-container">
         {products.map((product, i) => (

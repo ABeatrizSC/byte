@@ -6,13 +6,7 @@ import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 export function Item({ item, onOpenDeleteModal, onOpenChangeProductModal }) {
   const { name, price, description, image, category_id, id_product } = item;
   const alt = `Imagem do produto ${name}`;
-
-  console.log("id_product:", id_product);
-  console.log("category_id:", category_id);
-
   const itemID = id_product ?? category_id;
-
-  console.log("itemID:", itemID);
 
   return (
     <div className="item-container">
