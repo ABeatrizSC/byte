@@ -1,4 +1,4 @@
-export const HOST = "http://127.0.0.1:8000";
+export const HOST = " https://d7e4-177-47-86-144.ngrok-free.app";
 export const ROUTES_PRODUCT = "/product";
 export const ROUTES_PAYMENT_METHOD = "/payment-method";
 export const ROUTES_CATEGORY = "/product-category";
