@@ -2,6 +2,7 @@ import { useContext } from "react";
 import {
   HOST,
   ROUTES_CATEGORY,
+  ROUTES_CLIENT,
   ROUTES_GRAPH,
   ROUTES_LOGIN,
   ROUTES_ORDER,
@@ -13,13 +14,17 @@ import TokenContext from "../contexts/TokenContext";
 import { getAuthCookie, updateAuthCookie } from "../utils/cookie";
 import {
   IAllOrders,
+  IAllPaymentMethods,
   ICreateCategory,
+  ICreateOrder,
   ICreateProduct,
+  ICreateUser,
   IEditCategory,
   IEditProduct,
   IGetProductById,
   IOrderById,
 } from "../types/requests";
+import { Client } from "../types/models";
 
 const useService = () => {
   const { setToken, token } = useContext(TokenContext);
@@ -36,8 +41,13 @@ const useService = () => {
     return headers;
   };
 
-  const getAllProducts = async () => {
-    const response = await fetch(HOST + ROUTES_PRODUCT, {
+  const checkUnathorized = (response) => {};
+
+  const getAllProducts = async (params?: URLSearchParams) => {
+    const url = HOST + ROUTES_PRODUCT;
+    const urlParams = params?.toString() ?? "";
+
+    const response = await fetch(`${url}?${urlParams}`, {
       mode: "cors",
       headers: getHeaders(),
     });
@@ -45,15 +55,18 @@ const useService = () => {
   };
 
   const getProductById: IGetProductById = async (id) => {
-    const response = await fetch(HOST + ROUTES_PRODUCT, {
+    const response = await fetch(`${HOST}${ROUTES_PRODUCT}/${id}`, {
       mode: "cors",
       headers: getHeaders(),
     });
     return response.json();
   };
 
-  const getAllCategories = async () => {
-    const response = await fetch(HOST + ROUTES_CATEGORY, {
+  const getAllCategories = async (params?: URLSearchParams) => {
+    const url = HOST + ROUTES_CATEGORY;
+    const urlParams = params?.toString() ?? "";
+
+    const response = await fetch(`${url}?${urlParams}`, {
       mode: "cors",
       headers: getHeaders(),
     });
@@ -118,8 +131,11 @@ const useService = () => {
     return response;
   };
 
-  const getAllOrders: IAllOrders = async () => {
-    const response = await fetch(`${HOST}${ROUTES_ORDER}`, {
+  const getAllOrders: IAllOrders = async (params?: URLSearchParams) => {
+    const url = HOST + ROUTES_ORDER;
+    const urlParams = params?.toString() ?? "";
+
+    const response = await fetch(`${url}?${urlParams}`, {
       mode: "cors",
       headers: getHeaders(),
     });
@@ -132,6 +148,44 @@ const useService = () => {
       headers: getHeaders(),
     });
     return response;
+  };
+
+  const createUser = async (props): Promise<Client> => {
+    const response = await fetch(HOST + ROUTES_CLIENT, {
+      mode: "cors",
+      headers: getHeaders(),
+      method: "POST",
+      body: JSON.stringify(props),
+    });
+    return response.json();
+  };
+
+  const createOrder: ICreateOrder = async (props) => {
+    const clientResponse = createUser(props.client);
+    const { id_client } = await clientResponse;
+
+    const body = {
+      ...props,
+      id_client,
+    };
+
+    console.log("createOrder body: ", body);
+
+    const response = await fetch(HOST + ROUTES_ORDER, {
+      mode: "cors",
+      headers: getHeaders(),
+      method: "POST",
+      body: JSON.stringify(body),
+    });
+    return response;
+  };
+
+  const getAllPaymentMethods: IAllPaymentMethods = async () => {
+    const response = await fetch(HOST + ROUTES_PAYMENT_METHOD, {
+      mode: "cors",
+      headers: getHeaders(),
+    });
+    return response.json();
   };
 
   const getGraphTopSellingProducts = async () => {
@@ -183,6 +237,9 @@ const useService = () => {
     getAllOrders,
     getOrderById,
     getProductById,
+    getAllPaymentMethods,
+    createUser,
+    createOrder,
     getGraphTopSellingProducts,
     getGraphTopSellingPaymentMethods,
     login,

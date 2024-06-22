@@ -1,18 +1,27 @@
 import React from "react";
 import { SearchFilter } from "../../../../Components/SearchFilter";
 
-const Filter = () => {
+const Filter = ({ filter, setFilter, status, setStatus }) => {
   return (
     <div className="filters-container">
-      <SearchFilter filterPlaceholder="Id, cliente, endereço..." />
+      <SearchFilter
+        filterPlaceholder="Id ou endereço"
+        filter={filter}
+        setFilter={setFilter}
+      />
       <div className="status-filter-container">
         <label htmlFor="statusFilter">Filtrar por status:</label>
-        <select name="statusFilter" id="statusFilter">
-          <option value="pending">Pendente</option>
-          <option value="preparing">Em preparação</option>
-          <option value="onTheWay">Em rota</option>
-          <option value="delivered">Entregue</option>
-          <option value="canceled">Cancelado</option>
+        <select
+          value={status}
+          name="statusFilter"
+          id="statusFilter"
+          onChange={(e) => setStatus(e.target.value)}
+        >
+          <option value={"none"}>Selecione um status</option>
+          <option>Em preparação</option>
+          <option>Em rota</option>
+          <option>Entregue</option>
+          <option>Cancelado</option>
         </select>
       </div>
     </div>

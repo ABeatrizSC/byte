@@ -3,3 +3,5 @@ export const updateAuthCookie = (token: string): void => {
 };
 
 export const getAuthCookie = (): string => Cookies.get("auth");
+
+export const removeAuthCookie = () => Cookies.remove("auth");

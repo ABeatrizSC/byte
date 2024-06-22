@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./style.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import byteLogo from "../../assets/images/logoByte.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,12 +12,14 @@ import {
   faStore,
 } from "@fortawesome/free-solid-svg-icons";
 import TokenContext from "../../contexts/TokenContext";
+import { removeAuthCookie } from "../../utils/cookie";
 
 export function Sidebar({ children }) {
   /* TODO: REMOVER */
   const { token } = useContext(TokenContext);
   const [isSidebarOpened, setIsSidebarOpened] = useState(true);
   const openToggle = () => setIsSidebarOpened(!isSidebarOpened);
+  const navigate = useNavigate();
   const menuItems = [
     {
       path: "products",
@@ -40,6 +42,11 @@ export function Sidebar({ children }) {
       icon: <FontAwesomeIcon icon={faChartColumn} />,
     },
   ];
+
+  const handleLogout = () => {
+    removeAuthCookie();
+    navigate("/");
+  };
 
   return (
     <div className="sidebar-container">
@@ -72,7 +79,7 @@ export function Sidebar({ children }) {
             ))}
           </ul>
         </nav>
-        <button className="sidebar__logout-button">
+        <button className="sidebar__logout-button" onClick={handleLogout}>
           <FontAwesomeIcon className="icon" icon={faRightFromBracket} />
           {isSidebarOpened ? "Sair" : ""}
         </button>
