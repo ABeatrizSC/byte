@@ -36,11 +36,11 @@ export function Sidebar({ children }) {
       name: "Categorias",
       icon: <FontAwesomeIcon icon={faFolder} />,
     },
-    {
+/*     {
       path: "analytics",
       name: "Análise",
       icon: <FontAwesomeIcon icon={faChartColumn} />,
-    },
+    }, */
   ];
 
   const handleLogout = () => {

@@ -1,7 +1,6 @@
 import "./style.css";
 import { TableHeader } from "./Components/TableHeader";
 import { TableBody } from "./Components/TableBody";
-import Title from "./Components/Title";
 import Filter from "./Components/Filter";
 import { useDebounce } from "use-debounce";
 import { useState } from "react";
@@ -13,7 +12,7 @@ export function Order() {
 
   return (
     <section className="management-section">
-      <Title />
+      <h1>Pedidos efetuados</h1>
       <Filter
         filter={filter}
         setFilter={setFilter}
