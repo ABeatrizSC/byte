@@ -36,6 +36,7 @@ const CreateModal: React.FC<CreateModalProps> = (props) => {
       !isEmpty(name) &&
       !isEmpty(description) &&
       !isEmpty(image) &&
+      !isEmpty(detailed_image) &&
       !isEmpty(rank)
     );
   };

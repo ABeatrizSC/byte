@@ -20,6 +20,7 @@ export function Products() {
   const onOpenProductModal = () => setOpenProductModal(true);
   const onCloseProductModal = () => setOpenProductModal(false);
   const onCloseDeleteModal = () => setOpenDeleteModal(false);
+  const onCloseChangeProductModal = () => setOpenChangeProductModal(false);
 
   const handleEditProduct = (id, product) => {
     setOpenChangeProductModal(true);
@@ -68,7 +69,7 @@ export function Products() {
       />
       <EditModal
         isOpen={openChangeProductModal}
-        setOpen={setOpenChangeProductModal}
+        setOpen={onCloseChangeProductModal}
         item={currentProduct}
         id={productId}
       />

@@ -3,6 +3,10 @@
     text-align: center;
     min-width: 10rem;
     word-wrap: break-word;
+
+    &.address {
+        min-width: 40rem;
+    }
 }
 
 & .status {

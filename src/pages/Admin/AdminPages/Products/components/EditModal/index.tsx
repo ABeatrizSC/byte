@@ -19,6 +19,7 @@ const EditModal: React.FC<EditModalProps> = (props) => {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
+  const [detailed_image, setDetailedImage] = useState("");
   const [category_id, setCategory] = useState("");
   const [rank, setRank] = useState("");
 
@@ -37,18 +38,20 @@ const EditModal: React.FC<EditModalProps> = (props) => {
       !isEmpty(name) &&
       !isEmpty(description) &&
       !isEmpty(image) &&
+      !isEmpty(detailed_image) &&
       !isEmpty(rank)
     );
   };
 
   const loadFields = () => {
     if (!item) return;
-    const { name, price, description, image, category_id, rank } = item;
+    const { name, price, description, image, detailed_image, category_id, rank } = item;
 
     setName(name);
     setPrice(price);
     setDescription(description);
     setImage(image);
+    setDetailedImage(detailed_image);
     setCategory(category_id);
     setRank(rank);
   };
@@ -62,16 +65,17 @@ const EditModal: React.FC<EditModalProps> = (props) => {
         price,
         description,
         image,
+        detailed_image,
         category_id,
         rank,
       });
 
       if (response.ok) {
         setOpen(false);
-        toast.success('Produto adicionado. Por favor, recarregue a página.')
+        toast.success('Produto alterado. Por favor, recarregue a página.')
       } else {
         setWrong(true);
-        toast.error('Falha ao adicionar produto. Tente novamente.')
+        toast.error('Falha ao alterar produto. Tente novamente.')
       }
     }
   };
@@ -130,6 +134,19 @@ const EditModal: React.FC<EditModalProps> = (props) => {
                   required
                   value={image}
                   onChange={(e) => setImage(e.target.value)}
+                />
+              </div>
+              <div className="form__input-container">
+                <label htmlFor="new-product-image">
+                  URL da imagem na tela de detalhes:
+                </label>
+                <input
+                  type="text"
+                  id="new-detailed-product-image"
+                  name="new-detailed-product-image"
+                  required
+                  value={detailed_image}
+                  onChange={(e) => setDetailedImage(e.target.value)}
                 />
               </div>
               <div className="form__input-container">
