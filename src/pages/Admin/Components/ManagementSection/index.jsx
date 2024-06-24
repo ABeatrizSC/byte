@@ -1,6 +1,7 @@
 import "./style.css";
 import { Item } from "../Item";
 import { SearchFilter } from "../SearchFilter";
+import { useState } from "react";
 
 export function ManagementSection({
   title,
@@ -13,6 +14,7 @@ export function ManagementSection({
   onOpenChangeProductModal,
   onOpenDeleteModal,
 }) {
+
   return (
     <section className="management-section">
       <h1 className="management-section__title">{title}</h1>

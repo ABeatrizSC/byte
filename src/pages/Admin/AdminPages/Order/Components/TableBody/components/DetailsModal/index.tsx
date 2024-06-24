@@ -21,10 +21,10 @@ const DetailsModal: React.FC<DetailsModalProps> = (props) => {
               <span className="order-information__title">Nome do cliente:</span>
               <span>{order.client.name}</span>
             </div>
-            <div className="order-information">
+         {/*    <div className="order-information">
               <span className="order-information__title">Data:</span>
               <span>TODO</span>
-            </div>
+            </div> */}
             <div className="order-information">
               <span className="order-information__title">Endereço:</span>
               <span>{order.address}</span>
@@ -52,6 +52,19 @@ const DetailsModal: React.FC<DetailsModalProps> = (props) => {
               >
                 {order.status}
               </span>
+            </div>
+            <div className="order-information order-list-container">
+              <span className="order-information__title">Pedido:</span>
+              <div className="order-information__products-order">
+                <span>
+                  <strong>Nome: </strong> 
+                  Lanche
+                </span>
+                <span>
+                  <strong>Quantidade: </strong> 
+                  1x
+                </span>
+              </div>
             </div>
           </div>
         </div>
