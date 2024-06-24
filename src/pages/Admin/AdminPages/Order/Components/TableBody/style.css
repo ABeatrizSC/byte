@@ -17,3 +17,10 @@
         }
     }
 }
+
+.order-modal__change-status {
+    font-weight: 600;
+    margin-left: 8px;
+    text-decoration: underline;
+    cursor: pointer;
+}

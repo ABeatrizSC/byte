@@ -2,6 +2,8 @@ import React from "react";
 import { CustomModal } from "../../../../../../../../components/CustomModal";
 import { DetailedOrder } from "../../../../../../../../types/models";
 import * as COLORS from "../../../../../../../../constants/colors";
+import useService from "../../../../../../../../hooks/useService";
+import { NEXT_STATUS } from "../../../../../../../../constants/status";
 
 interface DetailsModalProps {
   isOpen: boolean;
@@ -11,6 +13,27 @@ interface DetailsModalProps {
 
 const DetailsModal: React.FC<DetailsModalProps> = (props) => {
   const { isOpen, setOpen, order } = props;
+
+  const { editOrderById } = useService();
+
+  const cleanOrder = (order) => {
+    const status = NEXT_STATUS[order.status];
+    const editedOrder = { ...order };
+    delete editedOrder.total;
+
+    return { ...editedOrder, status };
+  };
+
+  const handleUpdateStatus = async () => {
+    const editedOrder = cleanOrder(order);
+    const response = await editOrderById(order.id, editedOrder);
+
+    if (response.ok) {
+      const result = await response.json();
+      setOpen(false);
+    }
+  };
+
   return (
     order && (
       <CustomModal open={isOpen} onCloseModal={() => setOpen(false)}>
@@ -48,6 +71,12 @@ const DetailsModal: React.FC<DetailsModalProps> = (props) => {
               >
                 {order.status}
               </span>
+              <p
+                className="order-modal__change-status"
+                onClick={handleUpdateStatus}
+              >
+                Avançar status
+              </p>
             </div>
             <div className="order-information order-list-container">
               <span className="order-information__title">Pedido:</span>

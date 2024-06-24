@@ -37,6 +37,17 @@ export interface Order {
   status: string;
 }
 
+export interface OrdersProduct extends Product {
+  quantity: number;
+}
+
+export interface DetailedOrder extends Order {
+  products: OrdersProduct[];
+  client: Client;
+}
+
+export type RequestOrder = Omit<DetailedOrder, "id">;
+
 export type RequestClient = Omit<Client, "id_client">;
 
 export interface RequestProduct {

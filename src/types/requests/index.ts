@@ -1,10 +1,12 @@
 import { FormatedFormData } from "../../pages/Store/Checkout/utils";
 import {
   Category,
+  Order,
   Product,
   ProductRequest,
   RequestCategory,
   RequestClient,
+  RequestOrder,
 } from "../models";
 
 export interface ICreateCategory {
@@ -36,6 +38,10 @@ export interface IAllOrders {
 
 export interface IOrderById {
   (id: string): Promise<Response>;
+}
+
+export interface IEditOrderById {
+  (id: string | number, order: RequestOrder): Promise<Response>;
 }
 
 export interface IGetProductById {

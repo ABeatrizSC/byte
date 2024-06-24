@@ -20,6 +20,7 @@ import {
   ICreateProduct,
   ICreateUser,
   IEditCategory,
+  IEditOrderById,
   IEditProduct,
   IGetProductById,
   IOrderById,
@@ -150,6 +151,16 @@ const useService = () => {
     return response;
   };
 
+  const editOrderById: IEditOrderById = async (id, order) => {
+    const response = await fetch(`${HOST}${ROUTES_ORDER}/${id}`, {
+      mode: "cors",
+      headers: getHeaders(),
+      method: "PUT",
+      body: JSON.stringify(order),
+    });
+    return response;
+  };
+
   const createUser = async (props): Promise<Client> => {
     const response = await fetch(HOST + ROUTES_CLIENT, {
       mode: "cors",
@@ -234,6 +245,7 @@ const useService = () => {
     deleteProduct,
     getAllOrders,
     getOrderById,
+    editOrderById,
     getProductById,
     getAllPaymentMethods,
     createUser,
