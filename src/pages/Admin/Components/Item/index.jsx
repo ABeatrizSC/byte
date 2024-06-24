@@ -19,7 +19,10 @@ export function Item({ item, onOpenDeleteModal, onOpenChangeProductModal }) {
           />
         )}
         <div className="item-information-container__texts">
-          <span className="title">{name}</span>
+          <div>
+            <span className="title">{name}</span>
+            <span className="id"> #{itemID}</span>
+          </div>
           {price ? <span>R$ {price} </span> : null}
           {description ? <span>{description} </span> : null}
         </div>

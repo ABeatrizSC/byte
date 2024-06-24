@@ -30,6 +30,11 @@
                 font-weight: bold;
                 font-size: 1.8rem;
             }
+
+            & .id {
+                font-size: 1.5rem;
+                color: gray
+            }
         }
     }
 
