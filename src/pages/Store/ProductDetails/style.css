@@ -31,7 +31,7 @@
             position: absolute;
             top: 25%;
             left: 7%;
-            transform: translateY(-25%);
+            transform: translateY(-40%) scale(80%);
             width: 90%;
         }
     }
