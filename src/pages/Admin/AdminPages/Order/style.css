@@ -26,7 +26,7 @@
 
         & table {
             background-color: var(--white);
-            width: fit-content;
+            min-width: 70%;
             font-size: 1.5rem;
             border-radius: 1rem;
             display: block;
