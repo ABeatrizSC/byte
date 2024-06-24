@@ -1,4 +1,4 @@
-export const HOST = "https://6bdf-177-47-86-144.ngrok-free.app";
+export const HOST = "https://c13b-177-47-86-144.ngrok-free.app";
 export const ROUTES_PRODUCT = "/product";
 export const ROUTES_PAYMENT_METHOD = "/payment-method";
 export const ROUTES_CATEGORY = "/product-category";

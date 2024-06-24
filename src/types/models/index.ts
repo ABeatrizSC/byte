@@ -5,8 +5,11 @@ export interface Product {
   image: string;
   category_id: string;
   rank: string;
+  detailed_image: string;
   id_product: string;
 }
+
+export type ProductRequest = Omit<Product, "id_product">;
 
 export interface CardProduct extends Product {
   quantity: number;
