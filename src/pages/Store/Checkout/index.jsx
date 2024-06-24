@@ -42,7 +42,7 @@ export function Checkout() {
     cep: 0,
     complemento: "",
   });
-  
+
   const setFormData = (key, content) => {
     formData[key] = content;
   };
@@ -50,35 +50,38 @@ export function Checkout() {
   const formDataValidation = () => {
     const datas = Object.values(formData);
 
-    for (let i = 0; i < datas.length-1; i++) {
+    for (let i = 0; i < datas.length - 1; i++) {
       if (datas[i].length == 0 || datas[i].length == undefined) {
-        return false
+        return false;
       }
-    };
-    return true
-  }
+    }
+    return true;
+  };
 
   const selectPaymentMethod = (e) => {
-    const { value } = e.target;
-    setPaymentMethodId(value);
+    const { value, id } = e.target;
+    setPaymentMethodId(id);
     setFormData("paymentMethod", value);
   };
 
   const submitOrder = async () => {
-    const orderInfo = { ...formData, items };
+    const orderInfo = { ...formData, paymentMethod: paymentMethodId, items };
     const requestBody = formatFormData(orderInfo);
 
     const response = await createOrder(requestBody);
 
     if (response.ok) {
-      toast.success('Pedido enviado!');
+      console.log("response: ", response);
+      const result = await response.json();
+      const { id } = result;
+      toast.success("Pedido enviado!");
       emptyCart();
       let url = window.location.href;
-      const regex = /https?:\/\/[^\/]+/g;
-      const redirect = url.match(regex)+"/confirmacaoPedido";
+      const regex = /https?:\/\/[^/]+/g;
+      const redirect = url.match(regex) + `/confirmacaoPedido/${id}`;
       window.location.href = redirect;
     } else {
-      toast.error('Não foi possível enviar o pedido. Tente novamente.')
+      toast.error("Não foi possível enviar o pedido. Tente novamente.");
     }
   };
 
@@ -87,7 +90,9 @@ export function Checkout() {
     if (formDataValidation()) {
       onOpenModal();
     } else {
-      toast.error("Por favor, preencha os campos marcados com * (obrigatório).");
+      toast.error(
+        "Por favor, preencha os campos marcados com * (obrigatório)."
+      );
     }
   };
 
@@ -232,7 +237,10 @@ export function Checkout() {
               Total: R$ {cartTotal.toFixed(2).replace(".", ",")}
             </span>
             {items.length ? (
-              <button className="finalize-puchase-button" onClick={(e) => handleCheck(e)}>
+              <button
+                className="finalize-puchase-button"
+                onClick={(e) => handleCheck(e)}
+              >
                 Finalizar pedido
               </button>
             ) : null}
@@ -285,7 +293,9 @@ export function Checkout() {
                 </div>
                 <div>
                   <span className="order-information__title">Complemento:</span>
-                  <span>{formData.complemento ? formData.complemento : "-"}</span>
+                  <span>
+                    {formData.complemento ? formData.complemento : "-"}
+                  </span>
                 </div>
               </div>
               <div className="order-information">
@@ -295,11 +305,16 @@ export function Checkout() {
                 <span>{formData.paymentMethod}</span>
               </div>
               <div className="order-information">
-                <span className="order-information__title">Total do pedido:</span>
+                <span className="order-information__title">
+                  Total do pedido:
+                </span>
                 <span>R$ {cartTotal}</span>
               </div>
             </div>
-            <button className="button-change-informations" onClick={onCloseModal}>
+            <button
+              className="button-change-informations"
+              onClick={onCloseModal}
+            >
               Alterar informações
             </button>
             <button className="button-sent-order" onClick={submitOrder}>

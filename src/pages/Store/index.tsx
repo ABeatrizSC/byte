@@ -21,7 +21,7 @@ export const Store: React.FC = (props) => {
         <Route path="/cardapio" element={<MenuPage />} />
         <Route path="/cardapio/:id" element={<ProductDetails />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/confirmacaoPedido" element={<OrderConfirmation />} />
+        <Route path="/confirmacaoPedido/*" element={<OrderConfirmation />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <BackTopButton />

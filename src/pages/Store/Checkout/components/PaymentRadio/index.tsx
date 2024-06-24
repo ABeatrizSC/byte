@@ -15,7 +15,7 @@ const PaymentRadio: React.FC<PaymentRadioProps> = (props) => {
         name="paymentMethod"
         id={id}
         value={name}
-        checked={selected == name}
+        checked={selected == id}
         onChange={handleSelect}
       />
       <label htmlFor={id}>{name}</label>
