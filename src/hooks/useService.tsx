@@ -169,7 +169,7 @@ const useService = () => {
       id_client,
     };
 
-    console.log("createOrder body: ", body);
+    //console.log("createOrder body: ", body);
 
     const response = await fetch(HOST + ROUTES_ORDER, {
       mode: "cors",

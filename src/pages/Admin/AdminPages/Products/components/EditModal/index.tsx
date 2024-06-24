@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { CustomModal } from "../../../../../../components/CustomModal";
 import useService from "../../../../../../hooks/useService";
 import { Product } from "../../../../../../types/models";
+import { Toaster, toast } from "sonner";
 
 interface EditModalProps {
   isOpen: boolean;
@@ -67,8 +68,10 @@ const EditModal: React.FC<EditModalProps> = (props) => {
 
       if (response.ok) {
         setOpen(false);
+        toast.success('Produto adicionado. Por favor, recarregue a página.')
       } else {
         setWrong(true);
+        toast.error('Falha ao adicionar produto. Tente novamente.')
       }
     }
   };
@@ -78,83 +81,86 @@ const EditModal: React.FC<EditModalProps> = (props) => {
   }, [isOpen]);
 
   return (
-    <CustomModal open={isOpen} onCloseModal={setOpen}>
-      <div className="modal-content-container">
-        <h3>Alterar produto</h3>
-        <div className="form-container">
-          <form action="" className="form" onSubmit={handleSubmitProduct}>
-            <div className="form__input-container">
-              <label htmlFor="new-product-name">Nome do produto:</label>
-              <input
-                type="text"
-                id="new-product-name"
-                name="new-product-name"
-                required
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </div>
-            <div className="form__input-container">
-              <label htmlFor="new-product-category">Categoria:</label>
-              <input
-                type="text"
-                id="new-product-category"
-                name="new-product-category"
-                required
-                value={category_id}
-                onChange={(e) => setCategory(e.target.value)}
-              />
-            </div>
-            <div className="form__input-container">
-              <label htmlFor="new-product-price">Preço:</label>
-              <input
-                type="number"
-                id="new-product-price"
-                name="new-product-price"
-                required
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-              />
-            </div>
-            <div className="form__input-container">
-              <label htmlFor="new-product-image">URL da imagem:</label>
-              <input
-                type="text"
-                id="new-product-image"
-                name="new-product-image"
-                required
-                value={image}
-                onChange={(e) => setImage(e.target.value)}
-              />
-            </div>
-            <div className="form__input-container">
-              <label htmlFor="new-product-description">Descrição:</label>
-              <input
-                type="text"
-                id="new-product-description"
-                name="new-product-description"
-                required
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-              />
-            </div>
-            <div className="form__input-container">
-              <label htmlFor="new-product-rank">Rank:</label>
-              <input
-                type="number"
-                id="new-product-rank"
-                name="new-product-rank"
-                required
-                value={rank}
-                onChange={(e) => setRank(e.target.value)}
-              />
-            </div>
-            <button>Alterar</button>
-          </form>
+    <>
+      <Toaster richColors={true} />
+      <CustomModal open={isOpen} onCloseModal={setOpen}>
+        <div className="modal-content-container">
+          <h3>Alterar produto</h3>
+          <div className="form-container">
+            <form action="" className="form" onSubmit={handleSubmitProduct}>
+              <div className="form__input-container">
+                <label htmlFor="new-product-name">Nome do produto:</label>
+                <input
+                  type="text"
+                  id="new-product-name"
+                  name="new-product-name"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+              <div className="form__input-container">
+                <label htmlFor="new-product-category">Categoria:</label>
+                <input
+                  type="text"
+                  id="new-product-category"
+                  name="new-product-category"
+                  required
+                  value={category_id}
+                  onChange={(e) => setCategory(e.target.value)}
+                />
+              </div>
+              <div className="form__input-container">
+                <label htmlFor="new-product-price">Preço:</label>
+                <input
+                  type="number"
+                  id="new-product-price"
+                  name="new-product-price"
+                  required
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                />
+              </div>
+              <div className="form__input-container">
+                <label htmlFor="new-product-image">URL da imagem:</label>
+                <input
+                  type="text"
+                  id="new-product-image"
+                  name="new-product-image"
+                  required
+                  value={image}
+                  onChange={(e) => setImage(e.target.value)}
+                />
+              </div>
+              <div className="form__input-container">
+                <label htmlFor="new-product-description">Descrição:</label>
+                <input
+                  type="text"
+                  id="new-product-description"
+                  name="new-product-description"
+                  required
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+              </div>
+              <div className="form__input-container">
+                <label htmlFor="new-product-rank">Rank:</label>
+                <input
+                  type="number"
+                  id="new-product-rank"
+                  name="new-product-rank"
+                  required
+                  value={rank}
+                  onChange={(e) => setRank(e.target.value)}
+                />
+              </div>
+              <button>Alterar</button>
+            </form>
+          </div>
+          {wrong && <p>Houve um problema coma a alteração, veifique os campos</p>}
         </div>
-        {wrong && <p>Houve um problema coma a alteração, veifique os campos</p>}
-      </div>
-    </CustomModal>
+      </CustomModal>
+    </>
   );
 };
 

@@ -5,7 +5,7 @@ const Filter = ({ filter, setFilter, status, setStatus }) => {
   return (
     <div className="filters-container">
       <SearchFilter
-        filterPlaceholder="Id ou endereço"
+        filterPlaceholder="Digite o id do pedido"
         filter={filter}
         setFilter={setFilter}
       />

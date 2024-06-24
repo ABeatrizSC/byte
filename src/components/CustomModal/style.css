@@ -102,10 +102,22 @@
                 flex-wrap: wrap;
             }
             
+            &.order-list-container {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
             & .order-information__title {
                 font-weight: bold;
                 text-transform: uppercase;
                 margin-right: 1rem;
+            }
+
+            & .order-information__products-order {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                gap: 2rem;
             }
         }
     }
