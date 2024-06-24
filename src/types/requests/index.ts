@@ -1,5 +1,11 @@
 import { FormatedFormData } from "../../pages/Store/Checkout/utils";
-import { Category, Product, RequestCategory, RequestClient } from "../models";
+import {
+  Category,
+  Product,
+  ProductRequest,
+  RequestCategory,
+  RequestClient,
+} from "../models";
 
 export interface ICreateCategory {
   (category: RequestCategory): Promise<Response>;
@@ -18,7 +24,7 @@ export interface IEditCategory {
 }
 
 export interface ICreateProduct {
-  (product: Product): Promise<Response>;
+  (product: ProductRequest): Promise<Response>;
 }
 export interface IEditProduct {
   (id: string, product: Product): Promise<Response>;

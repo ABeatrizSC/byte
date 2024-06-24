@@ -1,7 +1,6 @@
 import "./style.css";
 import containerBg from "../../../assets/images/backgrounds/productDetails_bg.png";
 import { useParams } from "react-router-dom";
-
 import { AddCartButton } from "../../../components/addCartButton";
 import { useCallback, useEffect, useState } from "react";
 import useService from "../../../hooks/useService";
@@ -23,7 +22,7 @@ export function ProductDetails() {
 
   if (!product) return <></>;
 
-  const { name, description, price, image } = product;
+  const { name, description, price, detailed_image } = product;
 
   return (
     <section className="productDetails-section">
@@ -35,7 +34,7 @@ export function ProductDetails() {
         />
         <img
           className="product-img"
-          src={image}
+          src={detailed_image}
           alt={`imagem promocional do produto: ${name}`}
         />
       </div>

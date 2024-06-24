@@ -17,6 +17,7 @@ const CreateModal: React.FC<CreateModalProps> = (props) => {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
+  const [detailed_image, setDetailedImage] = useState("");
   const [category_id, setCategory] = useState("");
   const [rank, setRank] = useState("");
 
@@ -49,6 +50,7 @@ const CreateModal: React.FC<CreateModalProps> = (props) => {
         description,
         image,
         category_id,
+        detailed_image,
         rank,
       });
 
@@ -57,7 +59,9 @@ const CreateModal: React.FC<CreateModalProps> = (props) => {
         toast.success("Produto adicionado. Por favor, recarregue a página.");
       } else {
         setWrong(true);
-        toast.error("Não foi possível adicionar o produto. Por favor, tente novamente.");
+        toast.error(
+          "Não foi possível adicionar o produto. Por favor, tente novamente."
+        );
       }
     }
   };
@@ -115,6 +119,19 @@ const CreateModal: React.FC<CreateModalProps> = (props) => {
                 />
               </div>
               <div className="form__input-container">
+                <label htmlFor="new-product-image">
+                  URL da imagem na tela de detalhes:
+                </label>
+                <input
+                  type="text"
+                  id="new-detailed-product-image"
+                  name="new-detailed-product-image"
+                  required
+                  value={detailed_image}
+                  onChange={(e) => setDetailedImage(e.target.value)}
+                />
+              </div>
+              <div className="form__input-container">
                 <label htmlFor="new-product-description">Descrição:</label>
                 <input
                   type="text"
@@ -138,7 +155,9 @@ const CreateModal: React.FC<CreateModalProps> = (props) => {
               </div>
               <button>Adicionar</button>
             </form>
-            {wrong && <p>Houve um problema coma a criação, veifique os campos</p>}
+            {wrong && (
+              <p>Houve um problema coma a criação, veifique os campos</p>
+            )}
           </div>
         </div>
       </CustomModal>
