@@ -5,7 +5,7 @@ export function TableHeader() {
     <thead>
       <tr>
         <th>Id</th>
-        <th>Endereço</th>
+        <th className="address">Endereço</th>
         <th>Detalhes</th>
         <th>Status</th>
       </tr>

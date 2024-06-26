@@ -8,7 +8,11 @@
         padding: 0.5rem 1rem;
         text-align: center;
 /*         min-width: 10rem; */
-        max-width: 20rem;
+        width: 15rem;
         word-wrap: break-word;
+    }
+
+    & .address {
+        width: 35rem;
     }
 }

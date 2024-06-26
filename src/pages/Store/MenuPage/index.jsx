@@ -77,6 +77,7 @@ export function MenuPage() {
         ))}
       </div>
       <div className="menu-page-section__menu-container">
+        {products.length ? null : <p style={{color: 'white'}}>Execute o Banco de Dados para visualizar/criar/remover produtos.</p>}
         {products.map((product, i) => (
           <ProductCard key={i} {...product} />
         ))}

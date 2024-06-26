@@ -33,17 +33,21 @@ export function ManagementSection({
       </div>
       <div className="management-section__products-list-container">
         <h2>{subtitle}:</h2>
-        <ul>
-          {itemList?.map((item, index) => (
-            <li key={index}>
-              <Item
-                item={item}
-                onOpenChangeProductModal={onOpenChangeProductModal}
-                onOpenDeleteModal={onOpenDeleteModal}
-              />
-            </li>
-          ))}
-        </ul>
+        {itemList.length ?
+          <ul>
+            {itemList.map((item, index) => (
+              <li key={index}>
+                <Item
+                  item={item}
+                  onOpenChangeProductModal={onOpenChangeProductModal}
+                  onOpenDeleteModal={onOpenDeleteModal}
+                />
+              </li>
+            ))}
+          </ul>
+          :
+          <p style={{textAlign: 'center'}}>Execute o Banco de Dados para visualizar/criar/remover produtos e categorias.</p>
+        }
       </div>
     </section>
   );
